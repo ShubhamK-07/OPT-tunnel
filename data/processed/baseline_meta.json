@@ -1,0 +1,84 @@
+{
+  "source_nc": "gebco_2026_n37.45_s37.0_w11.35_e11.9.nc",
+  "tid_nc": "gebco_2026_tid_n37.45_s37.0_w11.35_e11.9.nc",
+  "pipeline_version": "2",
+  "config_fingerprint": "fa52941199237291",
+  "crs": "EPSG:32632 (WGS 84 / UTM zone 32N)",
+  "spacing_m": 450.0,
+  "shape": [
+    115,
+    113
+  ],
+  "bbox_wgs84": {
+    "north": 37.45,
+    "south": 37.0,
+    "west": 11.35,
+    "east": 11.9
+  },
+  "source_footprint_wgs84_cell_extent": {
+    "lon_min": 11.349999999999993,
+    "lon_max": 11.900000000000007,
+    "lat_min": 36.99999999999999,
+    "lat_max": 37.449999999999996,
+    "centre_lon": [
+      11.352083333333326,
+      11.897916666666674
+    ],
+    "centre_lat": [
+      37.002083333333324,
+      37.447916666666664
+    ]
+  },
+  "x_range_m": [
+    707870.4251915074,
+    758270.4251915074
+  ],
+  "y_range_m": [
+    4097453.994197236,
+    4148753.994197236
+  ],
+  "resampling_elevation": "bilinear",
+  "resampling_tid": "nearest",
+  "resampling_policy": "strict bilinear: a target point is valid only if every weighted source corner is a valid ocean cell; no extrapolation, no blending of land/NoData",
+  "nodata_policy": "z <= -100000.0 or non-finite -> missing; land (z >= 0) masked; both applied to the SOURCE raster before resampling",
+  "edge_policy": "inside the footprint but outside the outermost source cell centre, the edge cell is replicated (no extrapolation)",
+  "n_cells": 12995,
+  "n_valid": 12020,
+  "n_invalid": 975,
+  "n_outside_footprint": 952,
+  "n_stencil_touches_land_nodata": 23,
+  "n_source_cells": 14256,
+  "n_source_land_cells": 16,
+  "n_source_nodata_cells": 0,
+  "land_fraction": 0.07502885725278953,
+  "masked_fraction": 0.07502885725278953,
+  "land_nodata_only_fraction": 0.0017699115044247787,
+  "land_only_cells": 23,
+  "outside_fraction": 0.07325894574836475,
+  "invalid_fraction": 0.07502885725278953,
+  "noData_fraction_source": 0.0,
+  "endpoints_wgs84": {
+    "lon": [
+      11.855,
+      11.39
+    ],
+    "lat": [
+      37.36,
+      37.12
+    ]
+  },
+  "endpoints_xy_m": {
+    "A": [
+      752851.8794015187,
+      4138634.151678177
+    ],
+    "B": [
+      712335.0324494878,
+      4110857.9861725704
+    ]
+  },
+  "AB_geodesic_m": 49110.45300776633,
+  "AB_grid_m": 49123.622190644186,
+  "AB_difference_m": 13.169182877856656,
+  "AB_difference_pct": 0.026815437592836052
+}

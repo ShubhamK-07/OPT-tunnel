@@ -1,0 +1,736 @@
+{
+  "interpolator_check": {
+    "method": "cubic",
+    "spline_order": 3,
+    "n_probe": 20000,
+    "z": {
+      "interior_max_overshoot": 9.648961389107882,
+      "interior_p99_overshoot": 0.33215670846003253,
+      "interior_mean_overshoot": 0.0170343623186483,
+      "interior_n_probe": 19091,
+      "boundary_max_overshoot": 65.3324046588275,
+      "boundary_p99_overshoot": 5.775259311229113,
+      "boundary_n_probe": 565,
+      "max_abs_overshoot": 9.648961389107882,
+      "p99_abs_overshoot": 0.33215670846003253,
+      "relative_max_overshoot": 0.012316854364838823,
+      "n_probe": 19656
+    },
+    "d": {
+      "interior_max_overshoot": 9.648961389107882,
+      "interior_p99_overshoot": 0.33215670846003253,
+      "interior_mean_overshoot": 0.0170343623186483,
+      "interior_n_probe": 19091,
+      "boundary_max_overshoot": 65.3324046588275,
+      "boundary_p99_overshoot": 5.775259311229113,
+      "boundary_n_probe": 565,
+      "max_abs_overshoot": 9.648961389107882,
+      "p99_abs_overshoot": 0.33215670846003253,
+      "relative_max_overshoot": 0.012316854364838823,
+      "n_probe": 19656
+    },
+    "s": {
+      "interior_max_overshoot": 0.022080110482628812,
+      "interior_p99_overshoot": 0.001628067675747032,
+      "interior_mean_overshoot": 5.12908980998013e-05,
+      "interior_n_probe": 18349,
+      "boundary_max_overshoot": 0.0493634794852892,
+      "boundary_p99_overshoot": 0.00985758947017607,
+      "boundary_n_probe": 782,
+      "max_abs_overshoot": 0.022080110482628812,
+      "p99_abs_overshoot": 0.001628067675747032,
+      "relative_max_overshoot": 0.08632199969986083,
+      "n_probe": 19131
+    },
+    "R": {
+      "interior_max_overshoot": 0.022666430892001155,
+      "interior_p99_overshoot": 0.0019840763409293576,
+      "interior_mean_overshoot": 6.855192612750059e-05,
+      "interior_n_probe": 17610,
+      "boundary_max_overshoot": 0.047791363694414835,
+      "boundary_p99_overshoot": 0.019250262081568405,
+      "boundary_n_probe": 770,
+      "max_abs_overshoot": 0.022666430892001155,
+      "p99_abs_overshoot": 0.0019840763409293576,
+      "relative_max_overshoot": 0.03397035716422913,
+      "n_probe": 18380
+    },
+    "depth_leakage": {
+      "min_interp_depth_m": 14.648698515611715,
+      "n_probe_implying_land": 0,
+      "n_probe_on_masked_cell": 624,
+      "linear_min_interp_depth_m": 26.799613466227953,
+      "linear_n_probe_implying_land": 0,
+      "policy": "an interpolated depth <= 0 means the interpolant implied land; it is treated as infeasible (the constraint d >= d_min with d_min > 0 rejects it), never clipped to a small positive value",
+      "note": "depth is interpolated from ocean samples only; the two columns show the cubic and the linear depth interpolants on identical probes."
+    }
+  },
+  "hard_runs": [
+    {
+      "start": "warm_start_dijkstra",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 9,
+      "nfev": 82,
+      "J_km": 54.882123539747354,
+      "L_km": 51.94156777056928,
+      "S": 2940.5557691780773,
+      "max_kappa": 0.0001514284942168254,
+      "max_slope": 0.11283145825112709,
+      "depth_range": [
+        93.65956017073123,
+        540.9167566485621
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.0,
+        "slope": 0.1957137725193733,
+        "kappa": 0.0
+      },
+      "runtime_s": 0.5574157629999945,
+      "moved": 2.8071527994064756e-05,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": true,
+          "dense_slope": false,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense slope validation found 60 violations (max slope 6.451 deg)"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "warm_start_dijkstra_smoothed",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 10,
+      "nfev": 120,
+      "J_km": 54.87501325066841,
+      "L_km": 51.93467687570117,
+      "S": 2940.336374967238,
+      "max_kappa": 0.00014997609841382704,
+      "max_slope": 0.11376916840005956,
+      "depth_range": [
+        93.65985559173444,
+        540.8821557755688
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.0,
+        "slope": 0.20565100950176024,
+        "kappa": 0.0
+      },
+      "runtime_s": 0.44863321499997255,
+      "moved": 2.247985993939698e-06,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": true,
+          "dense_slope": false,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense slope validation found 60 violations (max slope 6.493 deg)"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "straight_line",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 8,
+      "nfev": 79,
+      "J_km": 51.84415186571031,
+      "L_km": 49.12431645858172,
+      "S": 2719.8354071285967,
+      "max_kappa": 1.2696821170066037e-14,
+      "max_slope": 0.1426671598493219,
+      "depth_range": [
+        93.65053311619982,
+        611.5036766978092
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.11503676697809169,
+        "slope": 0.511892964623216,
+        "kappa": 0.0
+      },
+      "runtime_s": 0.2436283010000011,
+      "moved": 1.3657816587591763e-11,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": false,
+          "dense_slope": false,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense depth validation found 51 violations",
+          "dense slope validation found 137 violations (max slope 8.128 deg)"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "random_00",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 5,
+      "nfev": 15,
+      "J_km": 53.23562738688238,
+      "L_km": 50.18782435165142,
+      "S": 3047.8030352309574,
+      "max_kappa": 0.0003070033118048667,
+      "max_slope": 0.13024755679093764,
+      "depth_range": [
+        93.65698753786657,
+        682.2611784291374
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.8226117842913743,
+        "slope": 0.3802781591752375,
+        "kappa": 0.0
+      },
+      "runtime_s": 0.10011332899995296,
+      "moved": 0.0,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": false,
+          "dense_slope": false,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense depth validation found 101 violations",
+          "dense slope validation found 111 violations (max slope 7.423 deg)"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "random_01",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 5,
+      "nfev": 15,
+      "J_km": 54.22000587801524,
+      "L_km": 50.93926133596665,
+      "S": 3280.744542048594,
+      "max_kappa": 0.0002715836441573807,
+      "max_slope": 0.17877794401960567,
+      "depth_range": [
+        93.6625681972364,
+        641.2783421045332
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.41278342104533183,
+        "slope": 0.8945713651166489,
+        "kappa": 0.0
+      },
+      "runtime_s": 0.08400320599997713,
+      "moved": 0.0,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": false,
+          "dense_slope": false,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense depth validation found 96 violations",
+          "dense slope validation found 99 violations (max slope 10.157 deg)"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "random_02",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 5,
+      "nfev": 15,
+      "J_km": 56.46071608312398,
+      "L_km": 53.32663045510165,
+      "S": 3134.0856280223225,
+      "max_kappa": 0.0015442434913436832,
+      "max_slope": 0.18960044762828052,
+      "depth_range": [
+        92.66739990866242,
+        559.8956618704668
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.0,
+        "slope": 1.0092611583588085,
+        "kappa": 1.1272763245354798
+      },
+      "runtime_s": 0.10827537199998005,
+      "moved": 0.0,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": true,
+          "dense_slope": false,
+          "exact_spline_curvature": false,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense slope validation found 107 violations (max slope 10.736 deg)",
+          "exact spline curvature exceeds the limit"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "random_03",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 9,
+      "nfev": 93,
+      "J_km": 54.03618519606796,
+      "L_km": 50.85113777969502,
+      "S": 3185.0474163729414,
+      "max_kappa": 0.0006871992167029153,
+      "max_slope": 0.19363122659001464,
+      "depth_range": [
+        93.6625681972364,
+        677.8116584483129
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.7781165844831287,
+        "slope": 1.0519767094403145,
+        "kappa": 0.0
+      },
+      "runtime_s": 0.3242768670000373,
+      "moved": 6.099719969445758e-05,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": false,
+          "dense_slope": false,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense depth validation found 107 violations",
+          "dense slope validation found 129 violations (max slope 11.039 deg)"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "random_04",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 5,
+      "nfev": 15,
+      "J_km": 54.83433572763333,
+      "L_km": 50.85439946902512,
+      "S": 3979.936258608212,
+      "max_kappa": 0.00030008667572756676,
+      "max_slope": 0.1928638993281249,
+      "depth_range": [
+        93.6625681972364,
+        566.2769624230716
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.0,
+        "slope": 1.0438450785167022,
+        "kappa": 0.0
+      },
+      "runtime_s": 0.09738463599995839,
+      "moved": 0.0,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": true,
+          "dense_slope": false,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense slope validation found 291 violations (max slope 10.927 deg)"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "random_05",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 5,
+      "nfev": 15,
+      "J_km": 56.42660892659665,
+      "L_km": 52.681993098211706,
+      "S": 3744.6158283849413,
+      "max_kappa": 0.0002917484647534797,
+      "max_slope": 0.17003321176117106,
+      "depth_range": [
+        92.16106894721038,
+        620.0610461171287
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.2006104611712874,
+        "slope": 0.8019004295418155,
+        "kappa": 0.0
+      },
+      "runtime_s": 0.07545185999998694,
+      "moved": 0.0,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": false,
+          "dense_slope": false,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense depth validation found 44 violations",
+          "dense slope validation found 242 violations (max slope 9.649 deg)"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "random_06",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 11,
+      "nfev": 125,
+      "J_km": 57.127356033330884,
+      "L_km": 53.427641186006866,
+      "S": 3699.7148473240186,
+      "max_kappa": 0.0009413624143441578,
+      "max_slope": 0.18962900144622813,
+      "depth_range": [
+        93.6625681972364,
+        619.5022669265707
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.19502266926570655,
+        "slope": 1.0095637529889514,
+        "kappa": 0.2967760512297379
+      },
+      "runtime_s": 0.4413583259999996,
+      "moved": 0.0020971891515020815,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": false,
+          "dense_slope": false,
+          "exact_spline_curvature": false,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense depth validation found 44 violations",
+          "dense slope validation found 205 violations (max slope 10.737 deg)",
+          "exact spline curvature exceeds the limit"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "random_07",
+      "solver": "slsqp_direct",
+      "status": 8,
+      "message": "Positive directional derivative for linesearch",
+      "nit": 6,
+      "nfev": 38,
+      "J_km": 55.41856549401779,
+      "L_km": 52.37501872953636,
+      "S": 3043.546764481438,
+      "max_kappa": 0.001189552290045065,
+      "max_slope": 0.16154994826663624,
+      "depth_range": [
+        92.64588174270668,
+        581.9938153051344
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.0,
+        "slope": 0.7120003683926476,
+        "kappa": 0.6386706096510562
+      },
+      "runtime_s": 0.15042362299999468,
+      "moved": 1.8158652168161e-11,
+      "continuation": null,
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": true,
+          "dense_slope": false,
+          "exact_spline_curvature": false,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense slope validation found 76 violations (max slope 9.184 deg)",
+          "exact spline curvature exceeds the limit"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "warm_start_dijkstra",
+      "solver": "slsqp_penalty",
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "nit": 34,
+      "nfev": 3562,
+      "J_km": 53.26068850836052,
+      "L_km": 50.98627185004173,
+      "S": 2274.416658318791,
+      "max_kappa": 0.00044207113542723214,
+      "max_slope": 0.09436326015272052,
+      "depth_range": [
+        93.6625681972364,
+        542.9038030053031
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.0,
+        "slope": 0.0,
+        "kappa": 0.0
+      },
+      "runtime_s": 3.3351075890000175,
+      "moved": 0.3059077754006476,
+      "continuation": [
+        {
+          "mu": 100.0,
+          "J_km": 53.259839391535614,
+          "max_violation": 0.0019321780788060334,
+          "status": 0,
+          "nit": 136,
+          "nfev": 2246
+        },
+        {
+          "mu": 10000.0,
+          "J_km": 53.260747867142214,
+          "max_violation": 3.092159216033131e-05,
+          "status": 0,
+          "nit": 30,
+          "nfev": 580
+        },
+        {
+          "mu": 1000000.0,
+          "J_km": 53.26068850836052,
+          "max_violation": 0.0,
+          "status": 0,
+          "nit": 34,
+          "nfev": 736
+        }
+      ],
+      "independent_feasibility": {
+        "feasible": true,
+        "criteria": {
+          "solver_collocation_nominal": true,
+          "dense_depth": true,
+          "dense_slope": true,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "warm_start_dijkstra_smoothed",
+      "solver": "slsqp_penalty",
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "nit": 13,
+      "nfev": 7006,
+      "J_km": 53.2593087520469,
+      "L_km": 50.99066440120276,
+      "S": 2268.644350844146,
+      "max_kappa": 0.0007204100483557387,
+      "max_slope": 0.09436329135453521,
+      "depth_range": [
+        93.64176623978466,
+        543.1534618248677
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.0,
+        "slope": 2.5561797584617064e-07,
+        "kappa": 0.0
+      },
+      "runtime_s": 8.162312811999982,
+      "moved": 0.3195608520419173,
+      "continuation": [
+        {
+          "mu": 100.0,
+          "J_km": 53.26295885574969,
+          "max_violation": 0.00018937330850733023,
+          "status": 9,
+          "nit": 300,
+          "nfev": 4856
+        },
+        {
+          "mu": 10000.0,
+          "J_km": 53.25929333266312,
+          "max_violation": 2.9153131388470464e-05,
+          "status": 0,
+          "nit": 97,
+          "nfev": 1862
+        },
+        {
+          "mu": 1000000.0,
+          "J_km": 53.2593087520469,
+          "max_violation": 2.5561797584617064e-07,
+          "status": 0,
+          "nit": 13,
+          "nfev": 288
+        }
+      ],
+      "independent_feasibility": {
+        "feasible": true,
+        "criteria": {
+          "solver_collocation_nominal": true,
+          "dense_depth": true,
+          "dense_slope": true,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    },
+    {
+      "start": "straight_line",
+      "solver": "slsqp_penalty",
+      "status": 0,
+      "message": "Optimization terminated successfully",
+      "nit": 8,
+      "nfev": 6915,
+      "J_km": 51.85116946366275,
+      "L_km": 49.13422991445502,
+      "S": 2716.9395492077274,
+      "max_kappa": 0.0007254747892595768,
+      "max_slope": 0.13622410187679865,
+      "depth_range": [
+        93.63348771979958,
+        598.6528680078902
+      ],
+      "violations": {
+        "depth_lo": 0.0,
+        "depth_hi": 0.0,
+        "slope": 0.44361366313851813,
+        "kappa": 0.0
+      },
+      "runtime_s": 7.529463945000032,
+      "moved": 0.7383409980724227,
+      "continuation": [
+        {
+          "mu": 100.0,
+          "J_km": 51.85214191825286,
+          "max_violation": 0.4434857727921093,
+          "status": 9,
+          "nit": 300,
+          "nfev": 5097
+        },
+        {
+          "mu": 10000.0,
+          "J_km": 51.85117007200889,
+          "max_violation": 0.4436138107963242,
+          "status": 0,
+          "nit": 88,
+          "nfev": 1735
+        },
+        {
+          "mu": 1000000.0,
+          "J_km": 51.85116946366275,
+          "max_violation": 0.44361366313851813,
+          "status": 0,
+          "nit": 8,
+          "nfev": 83
+        }
+      ],
+      "independent_feasibility": {
+        "feasible": false,
+        "criteria": {
+          "solver_collocation_nominal": false,
+          "dense_depth": true,
+          "dense_slope": false,
+          "exact_spline_curvature": true,
+          "inside_valid_domain": true,
+          "finite_and_physical": true
+        },
+        "reasons": [
+          "solver-side constraints violated at the collocation samples",
+          "dense slope validation found 132 violations (max slope 8.018 deg)"
+        ],
+        "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+      }
+    }
+  ]
+}

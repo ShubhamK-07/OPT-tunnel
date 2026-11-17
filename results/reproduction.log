@@ -1,0 +1,281 @@
+=== START data ===
+{
+  "source_nc": "gebco_2026_n37.45_s37.0_w11.35_e11.9.nc",
+  "tid_nc": "gebco_2026_tid_n37.45_s37.0_w11.35_e11.9.nc",
+  "pipeline_version": "2",
+  "config_fingerprint": "fa52941199237291",
+  "crs": "EPSG:32632 (WGS 84 / UTM zone 32N)",
+  "spacing_m": 450.0,
+  "shape": [
+    115,
+    113
+  ],
+  "bbox_wgs84": {
+    "north": 37.45,
+    "south": 37.0,
+    "west": 11.35,
+    "east": 11.9
+  },
+  "source_footprint_wgs84_cell_extent": {
+    "lon_min": 11.349999999999993,
+    "lon_max": 11.900000000000007,
+    "lat_min": 36.99999999999999,
+    "lat_max": 37.449999999999996,
+    "centre_lon": [
+      11.352083333333326,
+      11.897916666666674
+    ],
+    "centre_lat": [
+      37.002083333333324,
+      37.447916666666664
+    ]
+  },
+  "x_range_m": [
+    707870.4251915074,
+    758270.4251915074
+  ],
+  "y_range_m": [
+    4097453.994197236,
+    4148753.994197236
+  ],
+  "resampling_elevation": "bilinear",
+  "resampling_tid": "nearest",
+  "resampling_policy": "strict bilinear: a target point is valid only if every weighted source corner is a valid ocean cell; no extrapolation, no blending of land/NoData",
+  "nodata_policy": "z <= -100000.0 or non-finite -> missing; land (z >= 0) masked; both applied to the SOURCE raster before resampling",
+  "edge_policy": "inside the footprint but outside the outermost source cell centre, the edge cell is replicated (no extrapolation)",
+  "n_cells": 12995,
+  "n_valid": 12020,
+  "n_invalid": 975,
+  "n_outside_footprint": 952,
+  "n_stencil_touches_land_nodata": 23,
+  "n_source_cells": 14256,
+  "n_source_land_cells": 16,
+  "n_source_nodata_cells": 0,
+  "land_fraction": 0.07502885725278953,
+  "masked_fraction": 0.07502885725278953,
+  "land_nodata_only_fraction": 0.0017699115044247787,
+  "land_only_cells": 23,
+  "outside_fraction": 0.07325894574836475,
+  "invalid_fraction": 0.07502885725278953,
+  "noData_fraction_source": 0.0,
+  "endpoints_wgs84": {
+    "lon": [
+      11.855,
+      11.39
+    ],
+    "lat": [
+      37.36,
+      37.12
+    ]
+  },
+  "endpoints_xy_m": {
+    "A": [
+      752851.8794015187,
+      4138634.151678177
+    ],
+    "B": [
+      712335.0324494878,
+      4110857.9861725704
+    ]
+  },
+  "AB_geodesic_m": 49110.45300776633,
+  "AB_grid_m": 49123.622190644186,
+  "AB_difference_m": 13.169182877856656,
+  "AB_difference_pct": 0.026815437592836052
+}
+=== OK data ===
+=== START pipeline ===
+[baseline] feasible cells 0.776 | easy L=53.434 km | hard J=53.259 km (slsqp_penalty, warm_start_dijkstra_smoothed)
+[compare] L_E=53.434 km L_H=50.991 km | price of realism -4.57% | risk reduction +26.99%
+done in 96.0 s
+=== OK pipeline ===
+=== START tests_toy ===
+PASS  T1 blocked wall
+        samples_in_wall_band                 1
+        samples_in_blocked_cells             0
+        crossed_the_wall                     True
+        L_route_km                           54.31980515339464
+        L_straight_km                        45.0
+        detour_ratio                         1.2071067811865477
+        all_nodes_feasible                   True
+PASS  T2 flat zero risk
+        J_km                                 63.94420254113806
+        L_km                                 63.95705974108755
+        L_straight_km                        63.95701681598353
+        S                                    0.0
+        kappa_max                            3.305960222440852e-05
+        max_length_excess_pct                6.711555065042063e-05
+        constraints_satisfied                True
+        dense_max_violation                  0.0
+PASS  T3 single risk bump
+        J_left_km                            69.86393434117363
+        J_right_km                           69.8631583499799
+        J_symmetry_error_pct                 0.0011107178561469138
+        J_symmetry_tolerance_pct             2.0
+        J_symmetry_ok                        True
+        max_offset_left_m                    12791.468163032729
+        max_offset_right_m                   12789.165128173889
+        mirror_error_m                       28.719015009242867
+        mirror_tolerance_m                   639.5734081516365
+        mirror_ok                            True
+        mean_R_on_route                      1.7836942085611504e-05
+        mean_R_on_straight_line              0.09396756708135438
+        constraints_satisfied_left           True
+        constraints_satisfied_right          True
+PASS  T4 diagonal rule (combined baseline)
+        A_open_terrain                       True
+        B_blocked_midpoint_stencil           False
+        C_orthogonal_neighbour_infeasible    False
+        D_endpoint_infeasible                False
+        midpoint_binds_with_feasible_corners 0
+PASS  T5 strict reprojection masking
+        i_open_ocean_ok                      True
+        i_open_ocean_value_m                 -200.0
+        ii_land_stencil_ok                   False
+        iii_nodata_cell_ok                   False
+        iv_half_cell_border_ok               True
+        iv_value_is_edge_cell_m              -200.0
+        v_outside_extent_inside_footprint    False
+        no_positive_value_among_accepted     True
+        n_points_touching_invalid            2
+PASS  T6 interpolation validity
+        cubic_min_depth_m                    11.966372734715364
+        cubic_n_negative                     0
+        linear_min_depth_m                   39.99999999999999
+        linear_n_negative                    0
+        negative_depth_classified_infeasible True
+        reason_mentions_depth                True
+PASS  T7 feasibility classification
+        all_pass                             True
+        dense_slope_fails                    False
+        dense_depth_fails                    False
+        kappa_fails                          False
+        enters_mask                          False
+        empty_geometry                       False
+        missing_geometry_count               False
+        slope_failure_reason                 ['dense slope validation found 11 violations (max slope 5.658 deg)']
+
+ALL TOY TESTS PASS  (14.3 s)
+wrote /home/user/tunnel-opt/results/toy_tests.json
+=== OK tests_toy ===
+=== START sensitivity --set score ===
+[sensitivity] baseline ...
+  running slope_method=central ...
+  running slope_method=horn ...
+  running slope_method=sobel ...
+  running curvature_method=laplacian ...
+  running curvature_method=hessian ...
+  running roughness_window=3 ...
+  running roughness_window=5 ...
+  running roughness_window=7 ...
+  running roughness_window=9 ...
+  running roughness_field=slope ...
+  running roughness_field=depth ...
+  running smooth_sigma_cells=0.0 ...
+  running smooth_sigma_cells=1.0 ...
+  running smooth_sigma_cells=2.0 ...
+  running smooth_sigma_cells=3.0 ...
+  running s_max_deg=3.37 deg (P75) ...
+  running s_max_deg=5.44 deg (P90) ...
+  running s_max_deg=6.96 deg (P95) ...
+  running depth_range=50-600 m ...
+  running depth_range=80-450 m ...
+  running kappa_max=1/1350 m ...
+  running kappa_max=1/600 m ...
+  running kappa_max=1/338 m ...
+  running edge_rule=midpoint_corner ...
+  running edge_rule=node ...
+  running edge_rule=midpoint ...
+  running edge_rule=corner ...
+
+wrote /home/user/tunnel-opt/results/sensitivity_score.csv  (28 rows)
+=== OK sensitivity --set score ===
+=== START sensitivity --set full ===
+[sensitivity] baseline ...
+  running slope_method=central ...
+  running slope_method=horn ...
+  running slope_method=sobel ...
+  running curvature_method=laplacian ...
+  running curvature_method=hessian ...
+  running roughness_window=3 ...
+  running roughness_window=5 ...
+  running roughness_window=7 ...
+  running roughness_window=9 ...
+  running roughness_field=slope ...
+  running roughness_field=depth ...
+  running smooth_sigma_cells=0.0 ...
+  running smooth_sigma_cells=1.0 ...
+  running smooth_sigma_cells=2.0 ...
+  running smooth_sigma_cells=3.0 ...
+  running s_max_deg=3.37 deg (P75) ...
+  running s_max_deg=5.44 deg (P90) ...
+  running s_max_deg=6.96 deg (P95) ...
+  running depth_range=50-600 m ...
+  running depth_range=80-450 m ...
+  running kappa_max=1/1350 m ...
+  running kappa_max=1/600 m ...
+  running kappa_max=1/338 m ...
+  running edge_rule=midpoint_corner ...
+  running edge_rule=node ...
+  running edge_rule=midpoint ...
+  running edge_rule=corner ...
+  running depth_range=50-800 m ...
+  running kappa_max=1/150 m ...
+  running normalization=minmax ...
+  running normalization=p99clip ...
+
+wrote /home/user/tunnel-opt/results/sensitivity_full.csv  (32 rows)
+=== OK sensitivity --set full ===
+=== START sensitivity --set secondary ===
+[sensitivity] baseline ...
+
+wrote /home/user/tunnel-opt/results/sensitivity_secondary.csv  (7 rows)
+=== OK sensitivity --set secondary ===
+=== START sensitivity --set beta ===
+[sensitivity] baseline ...
+  running beta=0.0 ...
+  running beta=1.0 ...
+  running beta=3.0 ...
+  running beta=5.0 ...
+  running beta=10.0 ...
+  running beta=20.0 ...
+  running beta=50.0 ...
+  running beta=100.0 ...
+
+wrote /home/user/tunnel-opt/results/sensitivity_beta.csv  (9 rows)
+=== OK sensitivity --set beta ===
+=== START figures ===
+[figures] solving baseline ...
+[baseline] feasible cells 0.776 | easy L=53.434 km | hard J=53.259 km (slsqp_penalty, warm_start_dijkstra_smoothed)
+[figures] maps ...
+deck figures written
+figures written to /home/user/tunnel-opt/figures
+=== OK figures ===
+=== START report ===
+wrote /home/user/tunnel-opt/report.md (998 lines)
+=== OK report ===
+=== START report_html ===
+wrote /home/user/tunnel-opt/report.html (2.5 MB, self-contained)
+=== OK report_html ===
+=== START deck ===
+wrote /home/user/tunnel-opt/deck.pptx with 12 slides
+no layout warnings
+=== OK deck ===
+=== START deck_preview --sheet ===
+wrote /home/user/tunnel-opt/deck_preview/slide_01.png
+wrote /home/user/tunnel-opt/deck_preview/slide_02.png
+wrote /home/user/tunnel-opt/deck_preview/slide_03.png
+wrote /home/user/tunnel-opt/deck_preview/slide_04.png
+wrote /home/user/tunnel-opt/deck_preview/slide_05.png
+wrote /home/user/tunnel-opt/deck_preview/slide_06.png
+wrote /home/user/tunnel-opt/deck_preview/slide_07.png
+wrote /home/user/tunnel-opt/deck_preview/slide_08.png
+wrote /home/user/tunnel-opt/deck_preview/slide_09.png
+wrote /home/user/tunnel-opt/deck_preview/slide_10.png
+wrote /home/user/tunnel-opt/deck_preview/slide_11.png
+wrote /home/user/tunnel-opt/deck_preview/slide_12.png
+wrote /home/user/tunnel-opt/deck_preview/sheet_1.png
+wrote /home/user/tunnel-opt/deck_preview/sheet_2.png
+wrote /home/user/tunnel-opt/deck_preview/sheet_3.png
+=== OK deck_preview --sheet ===
+=== ALL 12 STEPS COMPLETE ===

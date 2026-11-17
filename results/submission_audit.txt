@@ -1,0 +1,22 @@
+PASS  Nine control points P0–P8, seven interior
+PASS  P0/A and P8/B match both exported route endpoints
+PASS  CSV coordinates match baseline JSON geometry
+PASS  Control points reconstruct all sampled spline coordinates
+PASS  Route CSV lengths reproduce baseline reported lengths
+PASS  Graph distance plus exact endpoint connectors equals full route
+PASS  Both adopted routes independently feasible
+PASS  All solver executions classified and counts match baseline
+PASS  All seven toy tests passed
+PASS  score sensitivity invalid pairs have no improvement metrics
+PASS  full sensitivity invalid pairs have no improvement metrics
+PASS  secondary sensitivity invalid pairs have no improvement metrics
+PASS  beta sensitivity invalid pairs have no improvement metrics
+PASS  Explicit runtime CSV fields match current baseline
+PASS  Report figure references exist
+PASS  HTML is the exact current rendering of Markdown
+PASS  PowerPoint package opens and has 12 slides and 12 speaker notes
+PASS  Slide 6 speaker notes state snapped endpoints and graph cost
+PASS  Control points appear in report appendix
+PASS  Citation, configuration, metadata and inputs present
+
+20/20 checks passed

@@ -1,0 +1,17 @@
+# Exact versions used to produce results/baseline.json, report.md and deck.pptx.
+# Python 3.13.18, CPU only, no GPU and no proprietary data.
+numpy==2.3.5
+scipy==1.17.1
+pandas==2.2.3
+matplotlib==3.11.2
+xarray==2025.4.0
+pyproj==3.8.0
+PyYAML==6.0.3
+python-pptx==1.0.2
+Pillow==13.0.0
+Markdown==3.11.3
+
+# GEBCO is shipped as NetCDF-4. xarray needs one backend for it: either
+# netCDF4 (as used here) or h5netcdf. The analysis code itself touches neither
+# directly -- it goes through xarray.
+netCDF4==1.7.5.1.post1

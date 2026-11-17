@@ -1,0 +1,92 @@
+{
+  "all_pass": true,
+  "tests": [
+    {
+      "test": "T1 blocked wall",
+      "samples_in_wall_band": 1,
+      "samples_in_blocked_cells": 0,
+      "crossed_the_wall": true,
+      "L_route_km": 54.31980515339464,
+      "L_straight_km": 45.0,
+      "detour_ratio": 1.2071067811865477,
+      "all_nodes_feasible": true,
+      "pass": true
+    },
+    {
+      "test": "T2 flat zero risk",
+      "J_km": 63.94420254113806,
+      "L_km": 63.95705974108755,
+      "L_straight_km": 63.95701681598353,
+      "S": 0.0,
+      "kappa_max": 3.305960222440852e-05,
+      "max_length_excess_pct": 6.711555065042063e-05,
+      "constraints_satisfied": true,
+      "dense_max_violation": 0.0,
+      "pass": true
+    },
+    {
+      "test": "T3 single risk bump",
+      "J_left_km": 69.86393434117363,
+      "J_right_km": 69.8631583499799,
+      "J_symmetry_error_pct": 0.0011107178561469138,
+      "J_symmetry_tolerance_pct": 2.0,
+      "J_symmetry_ok": true,
+      "max_offset_left_m": 12791.468163032729,
+      "max_offset_right_m": 12789.165128173889,
+      "mirror_error_m": 28.719015009242867,
+      "mirror_tolerance_m": 639.5734081516365,
+      "mirror_ok": true,
+      "mean_R_on_route": 1.7836942085611504e-05,
+      "mean_R_on_straight_line": 0.09396756708135438,
+      "constraints_satisfied_left": true,
+      "constraints_satisfied_right": true,
+      "pass": true
+    },
+    {
+      "A_open_terrain": true,
+      "B_blocked_midpoint_stencil": false,
+      "C_orthogonal_neighbour_infeasible": false,
+      "D_endpoint_infeasible": false,
+      "midpoint_binds_with_feasible_corners": 0,
+      "test": "T4 diagonal rule (combined baseline)",
+      "pass": true
+    },
+    {
+      "test": "T5 strict reprojection masking",
+      "i_open_ocean_ok": true,
+      "i_open_ocean_value_m": -200.0,
+      "ii_land_stencil_ok": false,
+      "iii_nodata_cell_ok": false,
+      "iv_half_cell_border_ok": true,
+      "iv_value_is_edge_cell_m": -200.0,
+      "v_outside_extent_inside_footprint": false,
+      "no_positive_value_among_accepted": true,
+      "n_points_touching_invalid": 2,
+      "pass": true
+    },
+    {
+      "test": "T6 interpolation validity",
+      "cubic_min_depth_m": 11.966372734715364,
+      "cubic_n_negative": 0,
+      "linear_min_depth_m": 39.99999999999999,
+      "linear_n_negative": 0,
+      "negative_depth_classified_infeasible": true,
+      "reason_mentions_depth": true,
+      "pass": true
+    },
+    {
+      "test": "T7 feasibility classification",
+      "all_pass": true,
+      "dense_slope_fails": false,
+      "dense_depth_fails": false,
+      "kappa_fails": false,
+      "enters_mask": false,
+      "empty_geometry": false,
+      "missing_geometry_count": false,
+      "slope_failure_reason": [
+        "dense slope validation found 11 violations (max slope 5.658 deg)"
+      ],
+      "pass": true
+    }
+  ]
+}

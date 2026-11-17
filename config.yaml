@@ -1,0 +1,99 @@
+# =====================================================================
+# tunnel-opt configuration  (single source of truth for every run)
+# Every value marked [DECIDED] in the report was fixed here in Phase 1-2.
+# =====================================================================
+
+project:
+  name: "Underwater Tunnel Route Optimization"
+  version: "1.0"
+  baseline_id: "baseline"
+
+data:
+  product: "GEBCO_2026 Grid"
+  resolution_arcsec: 15
+  # [DECIDED] Region: Sicily Channel / Malta Channel graben, ~50 x 50 km.
+  # Contains a shallow island shelf (Adventure Bank side, ~100-300 m) and a
+  # steep NE-SW graben flank; land fraction < 0.2 %.
+  bbox:
+    north: 37.45
+    south: 37.00
+    west: 11.35
+    east: 11.90
+  # [DECIDED] Local projected CRS: WGS 84 / UTM zone 32N
+  crs_epsg: 32632
+  grid_spacing_m: 450.0
+  resampling:
+    elevation: "bilinear"     # smooth, needed for derivatives
+    tid: "nearest"            # categorical layer
+  # [DECIDED] Endpoints A (NW shelf) and B (SE shelf), verified feasible.
+  A: {lon: 11.8550, lat: 37.3600}
+  B: {lon: 11.3900, lat: 37.1200}
+  nodata_threshold_m: -100000.0   # GEBCO NoData flag is -32767 / huge negatives
+
+features:
+  slope_method: "central"       # central | horn | sobel
+  curvature_method: "laplacian" # laplacian | hessian
+  roughness_window: 3           # w x w, odd
+  roughness_field: "slope"      # slope | depth
+  smooth_sigma_cells: 0.0       # Gaussian smoothing of z before derivatives
+
+risk:
+  normalization: "minmax"       # minmax | p99clip
+  weights: {slope: 0.5, roughness: 0.3, curvature: 0.2}
+  slope_squared: true
+
+constraints:
+  # [DECIDED] from baseline feature percentiles (report Sec. 4 / Sec. 9).
+  # depth: [p1, p99] of the subset = [56, 762] m; we take 50 / 600 m.
+  d_min_m: 50.0        # too shallow to be a sensible seabed-depth proxy
+  d_max_m: 600.0       # feasibility proxy for SEABED depth, NOT tunnel depth (Sec. 3.4)
+  # slope: percentiles of s over valid cells = P75 3.33, P90 5.48, P95 7.17 deg
+  s_max_deg: 5.5       # baseline = P90
+  # curvature: min radius 3 cells = 1350 m  ->  kappa_max = 1/1350
+  kappa_max_1_per_m: 7.4074e-4
+
+easy:
+  # midpoint_corner : BASELINE.  A diagonal step must (a) have both endpoints
+  #            feasible, (b) clear its GEOMETRIC MIDPOINT on depth and slope, and
+  #            (c) have both orthogonal neighbouring cells feasible (no corner
+  #            cutting).  (b) is a point test on the segment, (c) is a cell test
+  #            on the two cells the segment passes between; the spec requires both.
+  # node     : endpoint feasibility only (sensitivity variant)
+  # midpoint : (a) + (b) only (sensitivity variant)
+  # corner   : (a) + (c) only (sensitivity variant)
+  edge_rule: "midpoint_corner"
+  connectivity: 8
+
+hard:
+  n_control_points: 7       # K interior control points
+  n_samples: 200            # nominal M; active grid uses n_constraint_samples for objective and constraints
+  n_constraint_samples: 400 # active spline grid for objective AND constraints
+                            # integrated on: pointwise enforcement at M=200 leaves
+                            # a validated residual of up to 0.05 deg of slope
+                            # between its own samples (see report Sec. 9)
+  constraint_margin: 0.02   # solver targets 0.98 x s_max and 0.98 x kappa_max;
+                            # the route is always validated against the nominal limits
+  alpha: 1.0
+  beta: 1.0                 # units: metres (S has units of metres, R is [-])
+  integrator: "trapezoid"
+  # The B-spline is CLAMPED at both ends: A and B are fixed endpoints and the knot
+  # vector is repeated (k+1) times at 0 and 1, so the curve interpolates them.
+  spline_bc: "clamped"
+  slsqp:
+    ftol: 1.0e-6
+    maxiter: 300
+    n_random_starts: 8
+    random_seed: 20261110
+    perturb_sigma_cells: 6.0
+
+validation:
+  dense_factor: 10          # dense validation at 10*M
+  density_study_points: [200, 1000, 5000]
+
+sensitivity:
+  slsqp_starts_per_run: 3   # budget rule from spec Sec. 9
+  random_seed: 20261110
+
+output:
+  figures_dir: "figures"
+  results_dir: "results"

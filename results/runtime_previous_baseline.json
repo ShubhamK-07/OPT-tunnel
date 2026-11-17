@@ -1,0 +1,9 @@
+{
+  "provenance": "Prior completed baseline, preserved from the previous project archive; system load and thread configuration were not recorded. Historical timing observations, not current-run measurements.",
+  "easy_original_graph_search_s": 0.17388367499995638,
+  "easy_repeated_solve_median_s": 0.12519819700003154,
+  "hard_original_adopted_continuation_s": 6.425763263000022,
+  "hard_repeated_refinement_median_s": 1.536896089000038,
+  "hard_full_multistart_budget_s": 16.130460682000034,
+  "hard_budget_executions": 14
+}

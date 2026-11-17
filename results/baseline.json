@@ -1,0 +1,3301 @@
+{
+  "comparison": {
+    "L_easy_km": 53.43392129799307,
+    "L_hard_km": 50.99145254343114,
+    "S_easy": 3107.782502989321,
+    "S_hard": 2268.842683650753,
+    "J_easy_km": 56.5417038009824,
+    "J_hard_km": 53.26029522708188,
+    "price_of_realism_pct": -4.5710078826905685,
+    "risk_reduction_pct": 26.99480476936873,
+    "easy_max_slope_deg": 5.408405177966285,
+    "hard_max_slope_deg": 5.390304051195218,
+    "easy_kappa_max": 0.009769744201905406,
+    "hard_kappa_max": 0.0007204100483536027,
+    "easy_violations_slope_depth": 0,
+    "easy_violations_kappa_info": 133,
+    "hard_violations_slope_depth": 0,
+    "hard_violations_kappa": 0,
+    "easy_violations": 133,
+    "hard_violations": 0,
+    "hausdorff_m": 3238.2450312728806,
+    "mean_distance_m": 847.1340690141203,
+    "jaccard": 0.10810810810810811,
+    "runtime_easy_s": 0.221864437000022,
+    "runtime_hard_s": 8.162312811999982,
+    "nodes_expanded_easy": 9530,
+    "hard_kappa_exact": 0.0007204100483536027,
+    "hard_kappa_polyline_diagnostic": 0.0005805276276208541,
+    "hard_min_radius_exact_m": 1388.098350773093,
+    "hard_min_radius_polyline_diagnostic_m": 1722.5709034697409,
+    "J_easy_is_post_hoc": true,
+    "J_easy_label": "post-hoc common score J_E = L_E + beta*S_E; the easy formulation minimises L only",
+    "hard_objective_label": "min alpha*L + beta*S (the hard formulation's own objective)",
+    "integrator_note": "the hard OPTIMISER integrates J with the trapezoid rule on 400 spline samples (the same active grid as the collocation constraints); the reported L, S and J of both routes are recalculated afterwards by the same polyline evaluator (segment sums, midpoint field values)"
+  },
+  "verification": {
+    "endpoints": {
+      "easy_start_err_m": 0.0,
+      "easy_end_err_m": 0.0,
+      "hard_start_err_m": 0.0,
+      "hard_end_err_m": 0.0
+    },
+    "recompute": {
+      "easy_L_diff_m": 6.548361852765083e-11,
+      "easy_S_diff": 4.547473508864641e-13,
+      "hard_L_diff_m": 1.4551915228366852e-11,
+      "hard_S_diff": 0.0
+    },
+    "dijkstra_crosscheck": {
+      "own_length_m": 53110.97397793778,
+      "own_length_with_exact_endpoints_m": 53433.921297993074,
+      "scipy_length_m": 53110.97397793773,
+      "difference_m": 5.093170329928398e-11,
+      "connector_A_m": 220.62338840758574,
+      "connector_B_m": 102.32393164770049,
+      "snapped_A_xy_m": [
+        752870.4251915074,
+        4138853.994197236
+      ],
+      "snapped_B_xy_m": [
+        712370.4251915074,
+        4110953.994197236
+      ],
+      "scope": "shortest graph path between selected snapped cells only; exact endpoint connectors are appended and validated, not optimized over alternative connector choices"
+    },
+    "density_easy": [
+      {
+        "n_points": 200,
+        "L_m": 53206.45524855926,
+        "S": 3093.7715126443736,
+        "depth_min": 93.43467386775112,
+        "depth_max": 541.3959912422603,
+        "slope_max": 0.09446876973348492,
+        "slope_max_deg": 5.396645979588259,
+        "kappa_max": 0.009103537535404087,
+        "min_radius_m": 109.84740779185594,
+        "violation_depth_lo": 0.0,
+        "violation_depth_hi": 0.0,
+        "violation_slope": 0.0,
+        "violation_kappa": 0.008362797535404087,
+        "n_violations_depth": 0,
+        "n_negative_depth": 0,
+        "min_interp_depth_m": 93.43467386775112,
+        "n_violations_slope": 0,
+        "n_violations_kappa": 15,
+        "n_violations": 15,
+        "R_mean": 0.05797022763644107,
+        "R_max": 0.20704946391734974
+      },
+      {
+        "n_points": 1000,
+        "L_m": 53399.9580116559,
+        "S": 3107.1912506699537,
+        "depth_min": 93.43445948761199,
+        "depth_max": 541.4440106167726,
+        "slope_max": 0.0946800793924665,
+        "slope_max_deg": 5.408645800911946,
+        "kappa_max": 0.009752709161550641,
+        "min_radius_m": 102.53561173980545,
+        "violation_depth_lo": 0.0,
+        "violation_depth_hi": 0.0,
+        "violation_slope": 0.0,
+        "violation_kappa": 0.00901196916155064,
+        "n_violations_depth": 0,
+        "n_negative_depth": 0,
+        "min_interp_depth_m": 93.43445948761199,
+        "n_violations_slope": 0,
+        "n_violations_kappa": 67,
+        "n_violations": 67,
+        "R_mean": 0.05814969165714285,
+        "R_max": 0.2108598282036291
+      },
+      {
+        "n_points": 5000,
+        "L_m": 53422.00548706895,
+        "S": 3108.6714547362135,
+        "depth_min": 93.43372787888327,
+        "depth_max": 541.4827269593239,
+        "slope_max": 0.09467960029098572,
+        "slope_max_deg": 5.408618594306551,
+        "kappa_max": 0.009766533864324503,
+        "min_radius_m": 102.3904707536858,
+        "violation_depth_lo": 0.0,
+        "violation_depth_hi": 0.0,
+        "violation_slope": 0.0,
+        "violation_kappa": 0.009025793864324503,
+        "n_violations_depth": 0,
+        "n_negative_depth": 0,
+        "min_interp_depth_m": 93.43372787888327,
+        "n_violations_slope": 0,
+        "n_violations_kappa": 325,
+        "n_violations": 325,
+        "R_mean": 0.058184750366618826,
+        "R_max": 0.210968091574863
+      }
+    ],
+    "density_hard": [
+      {
+        "n_points": 200,
+        "L_m": 50990.906815161026,
+        "S": 2269.0431750727075,
+        "depth_min": 93.6625681972364,
+        "depth_max": 543.124083305459,
+        "slope_max": 0.09392274920899926,
+        "slope_max_deg": 5.365636451367597,
+        "kappa_max": 0.0005531639390713721,
+        "min_radius_m": 1807.7823396781018,
+        "violation_depth_lo": 0.0,
+        "violation_depth_hi": 0.0,
+        "violation_slope": 0.0,
+        "violation_kappa": 0.0,
+        "n_violations_depth": 0,
+        "n_negative_depth": 0,
+        "min_interp_depth_m": 93.6625681972364,
+        "n_violations_slope": 0,
+        "n_violations_kappa": 0,
+        "n_violations": 0,
+        "R_mean": 0.04433588980113995,
+        "R_max": 0.17502144679432177
+      },
+      {
+        "n_points": 1000,
+        "L_m": 50991.418679510585,
+        "S": 2268.81665886479,
+        "depth_min": 93.6426908618834,
+        "depth_max": 543.152283342795,
+        "slope_max": 0.09436781729647653,
+        "slope_max_deg": 5.390912940003231,
+        "kappa_max": 0.0005741843831756218,
+        "min_radius_m": 1741.600832940343,
+        "violation_depth_lo": 0.0,
+        "violation_depth_hi": 0.0,
+        "violation_slope": 0.0,
+        "violation_kappa": 0.0,
+        "n_violations_depth": 0,
+        "n_negative_depth": 0,
+        "min_interp_depth_m": 93.6426908618834,
+        "n_violations_slope": 0,
+        "n_violations_kappa": 0,
+        "n_violations": 0,
+        "R_mean": 0.044462662481342105,
+        "R_max": 0.17657452679018418
+      },
+      {
+        "n_points": 5000,
+        "L_m": 50991.44737797019,
+        "S": 2268.8088181475173,
+        "depth_min": 93.64160019636839,
+        "depth_max": 543.153481171029,
+        "slope_max": 0.09436542725064086,
+        "slope_max_deg": 5.390777209155268,
+        "kappa_max": 0.0005815755845985417,
+        "min_radius_m": 1719.466955770322,
+        "violation_depth_lo": 0.0,
+        "violation_depth_hi": 0.0,
+        "violation_slope": 0.0,
+        "violation_kappa": 0.0,
+        "n_violations_depth": 0,
+        "n_negative_depth": 0,
+        "min_interp_depth_m": 93.64160019636839,
+        "n_violations_slope": 0,
+        "n_violations_kappa": 0,
+        "n_violations": 0,
+        "R_mean": 0.044487674065366266,
+        "R_max": 0.17668439592795732
+      }
+    ],
+    "domain_easy": {
+      "n_points": 5000,
+      "n_outside_box": 0,
+      "n_on_masked_cell": 0,
+      "n_on_infeasible_cell": 0,
+      "fraction_on_feasible": 1.0,
+      "definition": "n_on_masked_cell counts samples in land / NoData / outside-footprint cells (never allowed); n_on_infeasible_cell counts samples in cells whose node-level depth or slope breaks a limit (a discretisation-flag test, explained where it is reported)",
+      "infeasible_reasons": {
+        "depth_below_min": 0,
+        "depth_above_max": 0,
+        "slope_above_max": 0
+      }
+    },
+    "domain_hard": {
+      "n_points": 5000,
+      "n_outside_box": 0,
+      "n_on_masked_cell": 0,
+      "n_on_infeasible_cell": 27,
+      "fraction_on_feasible": 0.9946,
+      "definition": "n_on_masked_cell counts samples in land / NoData / outside-footprint cells (never allowed); n_on_infeasible_cell counts samples in cells whose node-level depth or slope breaks a limit (a discretisation-flag test, explained where it is reported)",
+      "infeasible_reasons": {
+        "depth_below_min": 0,
+        "depth_above_max": 0,
+        "slope_above_max": 0
+      },
+      "worst_slope_on_infeasible_cell_deg": 5.347097156697297,
+      "worst_slope_excess_deg": -0.15290284330270332,
+      "median_slope_on_infeasible_cell_deg": 5.317216724871804
+    },
+    "easy_route_discretisation": {
+      "L_discrete_m": 53433.921297993074,
+      "L_smoothed_250m_m": 53134.47890969577,
+      "note": "the easy route is measured on the discrete node-to-node polyline; a light 250 m moving-average smoothing of the same corridor is shorter, so part of any negative 'price of realism' is grid discretisation rather than spline smoothness.",
+      "inflation_pct": 0.563555707031993
+    },
+    "easy_geometry": {
+      "n_segments": 96,
+      "n_turns": 11,
+      "largest_turn_deg": 139.82202236730097,
+      "mean_abs_turn_deg": 6.469325658757823,
+      "total_abs_turn_deg": 614.5859375819932,
+      "zigzag_ratio": 1.0877439186105011,
+      "smoothed_fit_curvature": {
+        "kappa_max": 0.00015718208573589466,
+        "min_radius_m": 6362.048164192521
+      },
+      "note": "The easy problem does not constrain route curvature. The 8-neighbour grid route is a zig-zag polyline, so pointwise finite-difference curvature of the polyline is not meaningful; heading changes and the curvature of a smoothed spline fit are reported for information."
+    },
+    "multistart": {
+      "n_distinct_initial_curves": 11,
+      "start_labels": [
+        "warm_start_dijkstra",
+        "warm_start_dijkstra_smoothed",
+        "straight_line",
+        "random_00",
+        "random_01",
+        "random_02",
+        "random_03",
+        "random_04",
+        "random_05",
+        "random_06",
+        "random_07"
+      ],
+      "n_solver_executions": 14,
+      "n_direct_executions": 11,
+      "n_penalty_executions": 3,
+      "penalty_start_labels": [
+        "straight_line",
+        "warm_start_dijkstra",
+        "warm_start_dijkstra_smoothed"
+      ],
+      "n_converged_status0": 3,
+      "n_feasible": 2,
+      "n_infeasible": 12,
+      "feasible_start_labels": [
+        "warm_start_dijkstra",
+        "warm_start_dijkstra_smoothed"
+      ],
+      "feasible_solvers": [
+        "slsqp_penalty"
+      ],
+      "J_feasible_min": 53.2593087520469,
+      "J_feasible_max": 53.26068850836052,
+      "J_feasible_spread": 0.0013797563136250801,
+      "n_infeasible_with_J": 12,
+      "J_infeasible_range": [
+        51.84415186571031,
+        57.127356033330884
+      ],
+      "infeasible_used_for_optimum": false,
+      "note": "Distinct initial curves and solver executions differ; all executions are independently classified. Feasibility is not optimality.",
+      "feasibility_basis": "independent nominal, dense depth/slope, exact spline curvature and domain checks for each execution",
+      "adopted": {
+        "solver": "slsqp_penalty",
+        "start": "warm_start_dijkstra_smoothed",
+        "status": 0,
+        "J_km": 53.2593087520469,
+        "feasible": true
+      }
+    },
+    "solver_strategies": {
+      "direct": {
+        "description": "direct constrained SLSQP",
+        "n_executions": 11,
+        "n_converged_status0": 0,
+        "n_feasible": 0
+      },
+      "penalty": {
+        "description": "quadratic exterior penalty continuation",
+        "n_executions": 3,
+        "n_converged_status0": 3,
+        "n_feasible": 2,
+        "starts": [
+          "straight_line",
+          "warm_start_dijkstra",
+          "warm_start_dijkstra_smoothed"
+        ]
+      },
+      "feasibility_vs_optimality": "Independent validation checks feasibility only, not optimality or a KKT certificate."
+    },
+    "interpolation": {
+      "checks": {
+        "cubic": {
+          "spline_order": 3,
+          "depth_interior_max_overshoot_m": 9.648961389107882,
+          "depth_boundary_max_overshoot_m": 65.3324046588275,
+          "slope_interior_p99_overshoot": 0.001628067675747032,
+          "risk_interior_max_overshoot": 0.022666430892001155,
+          "n_probe_implying_land": 0,
+          "min_interp_depth_m": 14.648698515611715
+        },
+        "linear": {
+          "spline_order": 1,
+          "depth_interior_max_overshoot_m": 0.0,
+          "depth_boundary_max_overshoot_m": 45.48051506116047,
+          "slope_interior_p99_overshoot": 0.0,
+          "risk_interior_max_overshoot": 0.0,
+          "n_probe_implying_land": 0,
+          "min_interp_depth_m": 26.799613466227953
+        }
+      },
+      "route_field_difference": {
+        "max_abs_depth_difference_m": 4.871743790377138,
+        "max_abs_slope_difference": 0.007973356000192666,
+        "max_abs_risk_difference": 0.007403267323820611
+      },
+      "linear_solution": {
+        "J_km": 53.275434493589515,
+        "L_km": 50.962182548852844,
+        "S": 2313.2519447366694,
+        "max_kappa": 0.0004904134805365306,
+        "min_radius_m": 2039.0956604740204,
+        "feasible": false,
+        "dense_max_slope_deg": 5.711202022325008,
+        "dense_n_violations": 16,
+        "hausdorff_vs_adopted_m": 115.35950202204506,
+        "jaccard_vs_adopted": 0.89937106918239,
+        "J_difference_km": 0.016125741542616367,
+        "L_difference_km": -0.02848185234991263,
+        "collocation_feasible": true,
+        "feasibility_note": "collocation uses linear fields; dense validation below uses the baseline cubic fields, and no full independent linear-field classification was performed"
+      },
+      "decision": "the cubic tensor-product spline is kept: it is the smooth field the B-spline corridor is meant to follow, its interior depth overshoot stays below 10 m (1.2 % of the 800 m depth span) and the adopted route is linear candidate must also be checked against the baseline field. Linear interpolation is reported as the overshoot-free reference, not adopted, because it has piecewise-constant gradients that make the slope constraint meaningless on a 450 m grid"
+    },
+    "continuous_domain_easy": {
+      "n_points": 5000,
+      "on_masked_cell": 0,
+      "masked_stencil": 0,
+      "masked_stencil_fraction": 0.0,
+      "point_violation_depth": 0,
+      "point_violation_slope": 0,
+      "point_violation_total": 0,
+      "on_infeasible_cell": 0,
+      "cell_flag_only": 0,
+      "infeasible_and_point_bad": 0,
+      "infeasible_and_masked": 0,
+      "min_clearance_to_mask_m": 3564.6072579803877,
+      "p5_clearance_to_mask_m": 4709.919767141227,
+      "continuously_feasible": true,
+      "worst_depth_violation_m": 0.0,
+      "worst_slope_violation_deg": -0.0913814056934485,
+      "adopted_definition": "continuously feasible = not inside a land/NoData cell AND interpolated depth and slope satisfy the nominal limits at the sample point"
+    },
+    "continuous_domain_hard": {
+      "n_points": 5000,
+      "on_masked_cell": 0,
+      "masked_stencil": 0,
+      "masked_stencil_fraction": 0.0,
+      "point_violation_depth": 0,
+      "point_violation_slope": 0,
+      "point_violation_total": 0,
+      "on_infeasible_cell": 27,
+      "cell_flag_only": 27,
+      "infeasible_and_point_bad": 0,
+      "infeasible_and_masked": 0,
+      "min_clearance_to_mask_m": 3564.6072579803877,
+      "p5_clearance_to_mask_m": 4921.50119482496,
+      "continuously_feasible": true,
+      "worst_depth_violation_m": 0.0,
+      "worst_slope_violation_deg": -0.10922279084473199,
+      "adopted_definition": "continuously feasible = not inside a land/NoData cell AND interpolated depth and slope satisfy the nominal limits at the sample point",
+      "cell_flag_only_slope_margin_deg": 0.15290284330270293,
+      "cell_flag_only_worst_slope_deg": 5.347097156697297,
+      "cell_flag_only_explanation": "these samples satisfy the depth and slope limits at the sample point but fall in a cell whose node-level slope violates s_max; with a 450 m cell the node value is a cell average, so a route can clip the edge of a flagged cell while staying inside the continuous limits"
+    },
+    "curvature": {
+      "kappa_max": 0.0007204100483536027,
+      "kappa_min_radius_m": 1388.098350773093,
+      "kappa_max_location_frac": 0.0,
+      "kappa_signed_at_max": -0.0007204100483536027,
+      "optimiser_kappa_max": 0.0007204100483557387,
+      "agreement_vs_optimiser": 2.1359867000136923e-15,
+      "n_samples": 2001,
+      "speed_min_m_per_unit_t": 5347.867615144352,
+      "endpoint_speed_m_per_unit_t": [
+        9940.52488986886,
+        100829.93922186733
+      ],
+      "note": "sample-independent recomputation on a rebuilt BSpline; the parameter speed is not uniform, so the maximum is located by sampling t uniformly, not by arc length",
+      "limit_kappa_max": 0.00074074,
+      "limit_min_radius_m": 1350.00135000135,
+      "enforced_kappa_max": 0.0007259252000000001,
+      "enforced_min_radius_m": 1377.5523979605612,
+      "violation_vs_nominal": 0.0,
+      "violation_vs_enforced": 0.0,
+      "within_nominal_limit": true,
+      "polyline_estimator_kappa_max": 0.0005815755845985417,
+      "agreement_vs_polyline_estimator": 0.00013883446375506094
+    },
+    "runtimes": {
+      "easy_single_dijkstra_s": 0.221864437000022,
+      "easy_repeated_median_s": 0.17290045299989742,
+      "easy_repeated_min_s": 0.14563553000004958,
+      "easy_repeated_max_s": 0.18502684200007025,
+      "hard_adopted_penalty_continuation_s": 8.162312811999982,
+      "hard_repeated_median_s": 4.226378800999896,
+      "hard_repeated_min_s": 4.224925362000022,
+      "hard_repeated_max_s": 4.262166494999974,
+      "hard_full_multistart_budget_s": 21.657848843999886,
+      "n_executions_in_budget": 14,
+      "ratio_median_hard_to_easy": 24.444000739560835,
+      "measurement_basis": "median of 3 repeated calls of each operation on the same machine; baseline Dijkstra timer covers graph search, while repeated easy timer covers solve_easy including route assembly; hard repetitions are penalty continuations from the adopted point",
+      "note": "(1) original easy timing covers the Dijkstra call; easy repeated timing also includes\nroute assembly. Original adopted hard timing covers the continuation from its warm start;\nrepeated hard timing measures a separate continuation from the adopted control points;\n(2) the multi-start budget is the sum over every solver execution and is the\ncost of *finding* the candidate, not of evaluating it; (3) repeated-run medians\nare quoted wherever a single measurement would be presented as precise."
+    },
+    "beta0": {
+      "beta0": {
+        "L_km": 50.87862499095379,
+        "S": 2592.3622325449087,
+        "J_km": 50.87862499095379,
+        "max_kappa": 0.0007262460935721519,
+        "min_radius_m": 1376.943723141212,
+        "max_kappa_polyline_diag": 0.0006921877711003362,
+        "max_slope_deg": 5.383046172193454,
+        "n_violations": 0,
+        "feasible": true
+      },
+      "beta1": {
+        "L_km": 50.99066440120276,
+        "S": 2268.644350844146,
+        "J_km": 53.2593087520469,
+        "max_kappa": 0.0007204100483557387
+      },
+      "difference": {
+        "L_km": -0.11203941024896835,
+        "L_pct": -0.22020919446798914,
+        "S": 323.7178817007625,
+        "S_pct": 12.487370693676953,
+        "hausdorff_m": 851.6126391646853,
+        "jaccard": 0.3407079646017699
+      },
+      "note": "beta = 0 removes risk from the objective but keeps the curvature and terrain constraints, so beta0 vs beta1 isolates the cost of risk avoidance in metres of added length."
+    },
+    "edge_rules": {
+      "midpoint_corner": {
+        "connected": true,
+        "L_km": 53.43392129799307,
+        "nodes_expanded": 9530,
+        "runtime_s": 0.1984364549999782,
+        "n_nodes": 95,
+        "hausdorff_vs_baseline_m": 0.0
+      },
+      "node": {
+        "connected": true,
+        "L_km": 53.17031740106095,
+        "nodes_expanded": 9618,
+        "runtime_s": 0.15553774600005,
+        "n_nodes": 94,
+        "hausdorff_vs_baseline_m": 318.4781449130159
+      },
+      "midpoint": {
+        "connected": true,
+        "L_km": 53.17031740106095,
+        "nodes_expanded": 9534,
+        "runtime_s": 0.15831763800008503,
+        "n_nodes": 94,
+        "hausdorff_vs_baseline_m": 318.4781449130159
+      },
+      "corner": {
+        "connected": true,
+        "L_km": 53.43392129799307,
+        "nodes_expanded": 9530,
+        "runtime_s": 0.14666974999988724,
+        "n_nodes": 95,
+        "hausdorff_vs_baseline_m": 0.0
+      },
+      "baseline_rule": "midpoint_corner",
+      "note": "`midpoint_corner` is the specification's rule and the baseline: a diagonal step needs (a) both endpoints feasible, (b) its geometric midpoint -- the point halfway along the segment, i.e. the average of the four surrounding node values -- inside the depth and slope limits, and (c) both orthogonal neighbouring cells feasible. `node`, `midpoint` and `corner` drop parts (b) / (c) and are kept only as variants."
+    },
+    "collocation_sensitivity": {
+      "M=400": {
+        "configured_M": 400,
+        "actual_integration_and_collocation_samples": 800,
+        "J_km": 53.25725540141636,
+        "L_km": 50.98712720771421,
+        "S": 2270.128193702151,
+        "max_violation_at_collocation": 0.0,
+        "dense_max_slope_deg": 5.390563512667231,
+        "dense_n_slope_violations": 0,
+        "kappa_max_exact": 0.0007259214422720467,
+        "min_radius_exact_m": 1377.5595288522136,
+        "kappa_max_polyline_diag": 0.0006663001267907021,
+        "n_dense_depth_violations": 0,
+        "status": 0,
+        "runtime_s": 4.55936211400001
+      },
+      "M=800": {
+        "configured_M": 800,
+        "actual_integration_and_collocation_samples": 1600,
+        "J_km": 53.25673536033987,
+        "L_km": 50.98333106214739,
+        "S": 2273.4042981924745,
+        "max_violation_at_collocation": 0.0,
+        "dense_max_slope_deg": 5.389545205411279,
+        "dense_n_slope_violations": 0,
+        "kappa_max_exact": 0.000725928248285349,
+        "min_radius_exact_m": 1377.5466134043022,
+        "kappa_max_polyline_diag": 0.0006678036224600768,
+        "n_dense_depth_violations": 0,
+        "status": 0,
+        "runtime_s": 8.491047526999978
+      }
+    },
+    "margin_cost": {
+      "margin": 0.02,
+      "J_with_margin_km": 53.2593087520469,
+      "J_without_margin_km": 53.24662404112092,
+      "difference_km": -0.012684710925981335,
+      "relative_pct": -0.023822563691897683,
+      "dense_slope_violations_without_margin": 0,
+      "dense_max_slope_without_margin_deg": 5.494950697197229,
+      "kappa_max_exact_without_margin": 0.0007411162427599926,
+      "n_dense_depth_violations_without_margin": 0,
+      "note": "a 2 % margin means the solver targets 0.98 x the slope and curvature limits, so that the independently validated route stays inside the nominal limits between collocation samples"
+    },
+    "depth_convention": "d is the GEBCO SEA-FLOOR depth (deepest = largest d). d_min/d_max limit the sea-floor depth along the route; they are NOT the tunnel depth below the seabed."
+  },
+  "geometry": {
+    "crs": 32632,
+    "control_points_hard": [
+      {
+        "point": "P0",
+        "role": "A (fixed)",
+        "easting_m": 752851.8794015187,
+        "northing_m": 4138634.151678177
+      },
+      {
+        "point": "P1",
+        "role": "interior (optimized)",
+        "easting_m": 752450.8139541001,
+        "northing_m": 4138254.509614308
+      },
+      {
+        "point": "P2",
+        "role": "interior (optimized)",
+        "easting_m": 741116.821729449,
+        "northing_m": 4128433.539530066
+      },
+      {
+        "point": "P3",
+        "role": "interior (optimized)",
+        "easting_m": 736635.441169387,
+        "northing_m": 4121505.7711299094
+      },
+      {
+        "point": "P4",
+        "role": "interior (optimized)",
+        "easting_m": 731240.8324927852,
+        "northing_m": 4116256.280931036
+      },
+      {
+        "point": "P5",
+        "role": "interior (optimized)",
+        "easting_m": 731581.9234397201,
+        "northing_m": 4116219.3074567798
+      },
+      {
+        "point": "P6",
+        "role": "interior (optimized)",
+        "easting_m": 729141.0778088865,
+        "northing_m": 4114587.0917600817
+      },
+      {
+        "point": "P7",
+        "role": "interior (optimized)",
+        "easting_m": 717684.8517393256,
+        "northing_m": 4112518.728531209
+      },
+      {
+        "point": "P8",
+        "role": "B (fixed)",
+        "easting_m": 712335.0324494878,
+        "northing_m": 4110857.9861725704
+      }
+    ],
+    "hard_normalized_decision_vector": [
+      0.8845315230673143,
+      0.6596507249591568,
+      0.5707344440055454,
+      0.4636985575650335,
+      0.4704662350835835,
+      0.42203675828133064,
+      0.1947306854725809,
+      0.7953316845433145,
+      0.6038897725697864,
+      0.46884555424314545,
+      0.36651631060039475,
+      0.36579558010806773,
+      0.3339785099969924,
+      0.29365953867393507
+    ],
+    "route_easy_xy_m": [
+      [
+        752851.8794015187,
+        4138634.151678177
+      ],
+      [
+        752870.4251915074,
+        4138853.994197236
+      ],
+      [
+        752420.4251915074,
+        4138403.994197236
+      ],
+      [
+        751970.4251915074,
+        4137953.994197236
+      ],
+      [
+        751970.4251915074,
+        4137503.994197236
+      ],
+      [
+        751520.4251915074,
+        4137053.994197236
+      ],
+      [
+        751070.4251915074,
+        4136603.994197236
+      ],
+      [
+        750620.4251915074,
+        4136153.994197236
+      ],
+      [
+        750170.4251915074,
+        4135703.994197236
+      ],
+      [
+        749720.4251915074,
+        4135253.994197236
+      ],
+      [
+        749270.4251915074,
+        4134803.994197236
+      ],
+      [
+        748820.4251915074,
+        4134353.994197236
+      ],
+      [
+        748370.4251915074,
+        4133903.994197236
+      ],
+      [
+        747920.4251915074,
+        4133453.994197236
+      ],
+      [
+        747470.4251915074,
+        4133003.994197236
+      ],
+      [
+        747020.4251915074,
+        4132553.994197236
+      ],
+      [
+        746570.4251915074,
+        4132103.994197236
+      ],
+      [
+        746120.4251915074,
+        4131653.994197236
+      ],
+      [
+        745670.4251915074,
+        4131203.994197236
+      ],
+      [
+        745220.4251915074,
+        4130753.994197236
+      ],
+      [
+        744770.4251915074,
+        4130303.994197236
+      ],
+      [
+        744320.4251915074,
+        4129853.994197236
+      ],
+      [
+        743870.4251915074,
+        4129403.994197236
+      ],
+      [
+        743420.4251915074,
+        4128953.994197236
+      ],
+      [
+        742970.4251915074,
+        4128503.994197236
+      ],
+      [
+        742520.4251915074,
+        4128053.994197236
+      ],
+      [
+        742070.4251915074,
+        4127603.994197236
+      ],
+      [
+        741620.4251915074,
+        4127153.994197236
+      ],
+      [
+        741170.4251915074,
+        4126703.994197236
+      ],
+      [
+        740720.4251915074,
+        4126253.994197236
+      ],
+      [
+        740270.4251915074,
+        4125803.994197236
+      ],
+      [
+        739820.4251915074,
+        4125353.994197236
+      ],
+      [
+        739370.4251915074,
+        4124903.994197236
+      ],
+      [
+        739370.4251915074,
+        4124453.994197236
+      ],
+      [
+        738920.4251915074,
+        4124003.994197236
+      ],
+      [
+        738470.4251915074,
+        4123553.994197236
+      ],
+      [
+        738020.4251915074,
+        4123103.994197236
+      ],
+      [
+        737570.4251915074,
+        4122653.994197236
+      ],
+      [
+        737120.4251915074,
+        4122203.994197236
+      ],
+      [
+        736670.4251915074,
+        4121753.994197236
+      ],
+      [
+        736220.4251915074,
+        4121303.994197236
+      ],
+      [
+        735770.4251915074,
+        4120853.994197236
+      ],
+      [
+        735320.4251915074,
+        4120403.994197236
+      ],
+      [
+        734870.4251915074,
+        4119953.994197236
+      ],
+      [
+        734420.4251915074,
+        4119503.994197236
+      ],
+      [
+        733970.4251915074,
+        4119053.994197236
+      ],
+      [
+        733520.4251915074,
+        4118603.994197236
+      ],
+      [
+        733070.4251915074,
+        4118153.994197236
+      ],
+      [
+        732620.4251915074,
+        4117703.994197236
+      ],
+      [
+        732170.4251915074,
+        4117253.994197236
+      ],
+      [
+        731720.4251915074,
+        4116803.994197236
+      ],
+      [
+        731720.4251915074,
+        4116353.994197236
+      ],
+      [
+        731720.4251915074,
+        4115903.994197236
+      ],
+      [
+        731270.4251915074,
+        4115903.994197236
+      ],
+      [
+        730820.4251915074,
+        4115453.994197236
+      ],
+      [
+        730370.4251915074,
+        4115453.994197236
+      ],
+      [
+        729920.4251915074,
+        4115453.994197236
+      ],
+      [
+        729470.4251915074,
+        4115453.994197236
+      ],
+      [
+        729020.4251915074,
+        4115453.994197236
+      ],
+      [
+        728570.4251915074,
+        4115453.994197236
+      ],
+      [
+        728120.4251915074,
+        4115453.994197236
+      ],
+      [
+        727670.4251915074,
+        4115453.994197236
+      ],
+      [
+        727220.4251915074,
+        4115453.994197236
+      ],
+      [
+        726770.4251915074,
+        4115453.994197236
+      ],
+      [
+        726320.4251915074,
+        4115453.994197236
+      ],
+      [
+        725870.4251915074,
+        4115453.994197236
+      ],
+      [
+        725420.4251915074,
+        4115453.994197236
+      ],
+      [
+        724970.4251915074,
+        4115453.994197236
+      ],
+      [
+        724520.4251915074,
+        4115453.994197236
+      ],
+      [
+        724070.4251915074,
+        4115453.994197236
+      ],
+      [
+        723620.4251915074,
+        4115453.994197236
+      ],
+      [
+        723170.4251915074,
+        4115453.994197236
+      ],
+      [
+        722720.4251915074,
+        4115453.994197236
+      ],
+      [
+        722270.4251915074,
+        4115453.994197236
+      ],
+      [
+        721820.4251915074,
+        4115453.994197236
+      ],
+      [
+        721370.4251915074,
+        4115453.994197236
+      ],
+      [
+        720920.4251915074,
+        4115453.994197236
+      ],
+      [
+        720470.4251915074,
+        4115453.994197236
+      ],
+      [
+        720020.4251915074,
+        4115453.994197236
+      ],
+      [
+        719570.4251915074,
+        4115453.994197236
+      ],
+      [
+        719120.4251915074,
+        4115453.994197236
+      ],
+      [
+        718670.4251915074,
+        4115453.994197236
+      ],
+      [
+        718220.4251915074,
+        4115453.994197236
+      ],
+      [
+        717770.4251915074,
+        4115453.994197236
+      ],
+      [
+        717320.4251915074,
+        4115453.994197236
+      ],
+      [
+        716870.4251915074,
+        4115453.994197236
+      ],
+      [
+        716420.4251915074,
+        4115003.994197236
+      ],
+      [
+        715970.4251915074,
+        4114553.994197236
+      ],
+      [
+        715520.4251915074,
+        4114103.994197236
+      ],
+      [
+        715070.4251915074,
+        4113653.994197236
+      ],
+      [
+        714620.4251915074,
+        4113203.994197236
+      ],
+      [
+        714170.4251915074,
+        4112753.994197236
+      ],
+      [
+        713720.4251915074,
+        4112303.994197236
+      ],
+      [
+        713270.4251915074,
+        4111853.994197236
+      ],
+      [
+        712820.4251915074,
+        4111403.994197236
+      ],
+      [
+        712370.4251915074,
+        4110953.994197236
+      ],
+      [
+        712335.0324494878,
+        4110857.9861725704
+      ]
+    ],
+    "route_hard_xy_m": [
+      [
+        752851.8794015187,
+        4138634.151678177
+      ],
+      [
+        752830.2388826957,
+        4138613.971129906
+      ],
+      [
+        752801.6036897486,
+        4138587.7622224675
+      ],
+      [
+        752766.1238337212,
+        4138555.643932972
+      ],
+      [
+        752723.9493256591,
+        4138517.735238533
+      ],
+      [
+        752675.2301766062,
+        4138474.155116262
+      ],
+      [
+        752620.1163976077,
+        4138425.0225432725
+      ],
+      [
+        752558.7579997081,
+        4138370.4564966746
+      ],
+      [
+        752491.304993952,
+        4138310.5759535832
+      ],
+      [
+        752417.9073913842,
+        4138245.4998911098
+      ],
+      [
+        752338.7152030496,
+        4138175.347286367
+      ],
+      [
+        752253.8784399923,
+        4138100.237116466
+      ],
+      [
+        752163.5471132575,
+        4138020.2883585207
+      ],
+      [
+        752067.8712338896,
+        4137935.6199896424
+      ],
+      [
+        751967.0008129335,
+        4137846.3509869445
+      ],
+      [
+        751861.085861434,
+        4137752.6003275393
+      ],
+      [
+        751750.2763904352,
+        4137654.486988538
+      ],
+      [
+        751634.7224109822,
+        4137552.1299470537
+      ],
+      [
+        751514.5739341199,
+        4137445.6481802
+      ],
+      [
+        751389.9809708926,
+        4137335.1606650874
+      ],
+      [
+        751261.093532345,
+        4137220.7863788297
+      ],
+      [
+        751128.0616295219,
+        4137102.6442985367
+      ],
+      [
+        750991.0352734679,
+        4136980.8534013242
+      ],
+      [
+        750850.1644752277,
+        4136855.5326643023
+      ],
+      [
+        750705.5992458463,
+        4136726.8010645853
+      ],
+      [
+        750557.4895963678,
+        4136594.7775792843
+      ],
+      [
+        750405.9855378375,
+        4136459.581185512
+      ],
+      [
+        750251.2370812997,
+        4136321.33086038
+      ],
+      [
+        750093.3942377991,
+        4136180.1455810023
+      ],
+      [
+        749932.6070183804,
+        4136036.1443244894
+      ],
+      [
+        749769.0254340884,
+        4135889.446067955
+      ],
+      [
+        749602.7994959677,
+        4135740.169788511
+      ],
+      [
+        749434.079215063,
+        4135588.43446327
+      ],
+      [
+        749263.0146024188,
+        4135434.3590693446
+      ],
+      [
+        749089.7556690802,
+        4135278.062583847
+      ],
+      [
+        748914.4524260917,
+        4135119.663983889
+      ],
+      [
+        748737.2548844978,
+        4134959.282246584
+      ],
+      [
+        748558.3130553432,
+        4134797.0363490437
+      ],
+      [
+        748377.776949673,
+        4134633.045268381
+      ],
+      [
+        748195.7965785314,
+        4134467.4279817073
+      ],
+      [
+        748012.5219529632,
+        4134300.303466136
+      ],
+      [
+        747828.1030840133,
+        4134131.7906987797
+      ],
+      [
+        747642.689982726,
+        4133962.0086567486
+      ],
+      [
+        747456.4326601466,
+        4133791.0763171595
+      ],
+      [
+        747269.481127319,
+        4133619.1126571205
+      ],
+      [
+        747081.9853952886,
+        4133446.2366537456
+      ],
+      [
+        746894.0954750995,
+        4133272.5672841463
+      ],
+      [
+        746705.961377797,
+        4133098.2235254375
+      ],
+      [
+        746517.7331144251,
+        4132923.3243547287
+      ],
+      [
+        746329.5606960289,
+        4132747.9887491334
+      ],
+      [
+        746141.594133653,
+        4132572.3356857644
+      ],
+      [
+        745953.9834383421,
+        4132396.4841417344
+      ],
+      [
+        745766.8786211407,
+        4132220.553094154
+      ],
+      [
+        745580.4296930942,
+        4132044.661520139
+      ],
+      [
+        745394.7866652461,
+        4131868.9283967973
+      ],
+      [
+        745210.099548642,
+        4131693.4727012445
+      ],
+      [
+        745026.5183543263,
+        4131518.4134105914
+      ],
+      [
+        744844.1930933436,
+        4131343.869501952
+      ],
+      [
+        744663.2737767387,
+        4131169.959952437
+      ],
+      [
+        744483.9104155563,
+        4130996.8037391594
+      ],
+      [
+        744306.2530208409,
+        4130824.5198392323
+      ],
+      [
+        744130.4516036375,
+        4130653.2272297675
+      ],
+      [
+        743956.6561749906,
+        4130483.0448878775
+      ],
+      [
+        743785.0167459447,
+        4130314.091790674
+      ],
+      [
+        743615.6833275447,
+        4130146.4869152703
+      ],
+      [
+        743448.8059308354,
+        4129980.3492387785
+      ],
+      [
+        743284.5345668612,
+        4129815.7977383104
+      ],
+      [
+        743123.0151698214,
+        4129652.9484783504
+      ],
+      [
+        742964.2999064646,
+        4129491.8505329136
+      ],
+      [
+        742808.3471760894,
+        4129332.4859855464
+      ],
+      [
+        742655.1113011492,
+        4129174.8340071687
+      ],
+      [
+        742504.5466040968,
+        4129018.8737686975
+      ],
+      [
+        742356.607407385,
+        4128864.5844410523
+      ],
+      [
+        742211.248033467,
+        4128711.94519515
+      ],
+      [
+        742068.4228047957,
+        4128560.935201911
+      ],
+      [
+        741928.086043824,
+        4128411.5336322505
+      ],
+      [
+        741790.1920730053,
+        4128263.7196570896
+      ],
+      [
+        741654.695214792,
+        4128117.4724473455
+      ],
+      [
+        741521.5497916378,
+        4127972.771173938
+      ],
+      [
+        741390.7101259951,
+        4127829.595007783
+      ],
+      [
+        741262.1305403172,
+        4127687.9231198006
+      ],
+      [
+        741135.765357057,
+        4127547.734680908
+      ],
+      [
+        741011.5688986676,
+        4127409.0088620246
+      ],
+      [
+        740889.4954876017,
+        4127271.7248340677
+      ],
+      [
+        740769.4994463128,
+        4127135.861767957
+      ],
+      [
+        740651.5350972535,
+        4127001.3988346094
+      ],
+      [
+        740535.5567628768,
+        4126868.315204944
+      ],
+      [
+        740421.5187656358,
+        4126736.590049879
+      ],
+      [
+        740309.3754279839,
+        4126606.202540334
+      ],
+      [
+        740199.0810723733,
+        4126477.131847224
+      ],
+      [
+        740090.5900212573,
+        4126349.3571414696
+      ],
+      [
+        739983.8565970893,
+        4126222.85759399
+      ],
+      [
+        739878.8351223217,
+        4126097.612375702
+      ],
+      [
+        739775.4799194082,
+        4125973.6006575245
+      ],
+      [
+        739673.7453108013,
+        4125850.8016103758
+      ],
+      [
+        739573.5856189539,
+        4125729.194405175
+      ],
+      [
+        739474.9551663192,
+        4125608.7582128374
+      ],
+      [
+        739377.8082753504,
+        4125489.4722042857
+      ],
+      [
+        739282.0992685,
+        4125371.3155504344
+      ],
+      [
+        739187.7824682214,
+        4125254.267422205
+      ],
+      [
+        739094.8121969673,
+        4125138.3069905126
+      ],
+      [
+        739003.1427771911,
+        4125023.413426279
+      ],
+      [
+        738912.7285313456,
+        4124909.5659004212
+      ],
+      [
+        738823.5237818836,
+        4124796.743583856
+      ],
+      [
+        738735.4828512582,
+        4124684.9256475028
+      ],
+      [
+        738648.5600619228,
+        4124574.091262281
+      ],
+      [
+        738562.7097363297,
+        4124464.2195991073
+      ],
+      [
+        738477.8861969325,
+        4124355.289828901
+      ],
+      [
+        738394.0437661838,
+        4124247.2811225792
+      ],
+      [
+        738311.1367665369,
+        4124140.1726510623
+      ],
+      [
+        738229.1195204444,
+        4124033.943585267
+      ],
+      [
+        738147.9463503598,
+        4123928.5730961133
+      ],
+      [
+        738067.5715787355,
+        4123824.040354516
+      ],
+      [
+        737987.9495280252,
+        4123720.3245313973
+      ],
+      [
+        737909.0345206815,
+        4123617.4047976746
+      ],
+      [
+        737830.7808791574,
+        4123515.2603242653
+      ],
+      [
+        737753.1429259058,
+        4123413.870282087
+      ],
+      [
+        737676.0749833798,
+        4123313.2138420604
+      ],
+      [
+        737599.5313740326,
+        4123213.270175102
+      ],
+      [
+        737523.4664203171,
+        4123114.018452132
+      ],
+      [
+        737447.8344446858,
+        4123015.4378440655
+      ],
+      [
+        737372.5897695925,
+        4122917.507521825
+      ],
+      [
+        737297.6867174897,
+        4122820.2066563256
+      ],
+      [
+        737223.0796108306,
+        4122723.5144184856
+      ],
+      [
+        737148.722772068,
+        4122627.409979225
+      ],
+      [
+        737074.570523655,
+        4122531.8725094628
+      ],
+      [
+        737000.5771880448,
+        4122436.8811801155
+      ],
+      [
+        736926.6970876899,
+        4122342.4151621014
+      ],
+      [
+        736852.8845450436,
+        4122248.4536263393
+      ],
+      [
+        736779.0938825593,
+        4122154.975743749
+      ],
+      [
+        736705.2794226892,
+        4122061.9606852466
+      ],
+      [
+        736631.3954878871,
+        4121969.387621752
+      ],
+      [
+        736557.3964006051,
+        4121877.235724182
+      ],
+      [
+        736483.2364832968,
+        4121785.4841634557
+      ],
+      [
+        736408.8814395526,
+        4121694.1175850006
+      ],
+      [
+        736334.3424975121,
+        4121603.142532271
+      ],
+      [
+        736259.6422664524,
+        4121512.5710232332
+      ],
+      [
+        736184.8033556505,
+        4121422.415075851
+      ],
+      [
+        736109.8483743841,
+        4121332.6867080904
+      ],
+      [
+        736034.7999319297,
+        4121243.3979379144
+      ],
+      [
+        735959.6806375649,
+        4121154.560783289
+      ],
+      [
+        735884.5131005661,
+        4121066.1872621765
+      ],
+      [
+        735809.3199302112,
+        4120978.289392543
+      ],
+      [
+        735734.1237357771,
+        4120890.8791923546
+      ],
+      [
+        735658.9471265409,
+        4120803.968679574
+      ],
+      [
+        735583.8127117797,
+        4120717.569872166
+      ],
+      [
+        735508.7431007705,
+        4120631.6947880946
+      ],
+      [
+        735433.7609027908,
+        4120546.3554453263
+      ],
+      [
+        735358.8887271174,
+        4120461.5638618236
+      ],
+      [
+        735284.1491830276,
+        4120377.332055553
+      ],
+      [
+        735209.5648797986,
+        4120293.672044477
+      ],
+      [
+        735135.158426707,
+        4120210.5958465617
+      ],
+      [
+        735060.9524330306,
+        4120128.1154797724
+      ],
+      [
+        734986.9695080463,
+        4120046.242962072
+      ],
+      [
+        734913.2322610312,
+        4119964.990311426
+      ],
+      [
+        734839.7633012623,
+        4119884.369545799
+      ],
+      [
+        734766.585238017,
+        4119804.392683156
+      ],
+      [
+        734693.7206805721,
+        4119725.07174146
+      ],
+      [
+        734621.1922382049,
+        4119646.4187386767
+      ],
+      [
+        734549.0225201929,
+        4119568.445692771
+      ],
+      [
+        734477.2341358126,
+        4119491.164621707
+      ],
+      [
+        734405.8496943414,
+        4119414.5875434494
+      ],
+      [
+        734334.8918050565,
+        4119338.7264759624
+      ],
+      [
+        734264.383077235,
+        4119263.593437211
+      ],
+      [
+        734194.346120154,
+        4119189.200445161
+      ],
+      [
+        734124.8035430906,
+        4119115.5595177743
+      ],
+      [
+        734055.777955322,
+        4119042.682673018
+      ],
+      [
+        733987.2919661251,
+        4118970.5819288553
+      ],
+      [
+        733919.3681847774,
+        4118899.2693032515
+      ],
+      [
+        733852.0292205558,
+        4118828.7568141706
+      ],
+      [
+        733785.2976827377,
+        4118759.0564795784
+      ],
+      [
+        733719.1961805997,
+        4118690.180317438
+      ],
+      [
+        733653.7473234195,
+        4118622.140345715
+      ],
+      [
+        733588.9737204737,
+        4118554.948582373
+      ],
+      [
+        733524.89798104,
+        4118488.6170453774
+      ],
+      [
+        733461.5427143951,
+        4118423.157752693
+      ],
+      [
+        733398.9305298161,
+        4118358.582722284
+      ],
+      [
+        733337.0840365805,
+        4118294.9039721154
+      ],
+      [
+        733276.0258439654,
+        4118232.1335201515
+      ],
+      [
+        733215.7785612474,
+        4118170.2833843557
+      ],
+      [
+        733156.3647977042,
+        4118109.3655826943
+      ],
+      [
+        733097.8071626124,
+        4118049.392133131
+      ],
+      [
+        733040.12826525,
+        4117990.375053632
+      ],
+      [
+        732983.3507148931,
+        4117932.326362159
+      ],
+      [
+        732927.4971208196,
+        4117875.25807668
+      ],
+      [
+        732872.5900923063,
+        4117819.1822151565
+      ],
+      [
+        732818.6522386302,
+        4117764.110795555
+      ],
+      [
+        732765.7061690688,
+        4117710.0558358394
+      ],
+      [
+        732713.774492899,
+        4117657.0293539744
+      ],
+      [
+        732662.8798193978,
+        4117605.043367925
+      ],
+      [
+        732613.0447578428,
+        4117554.1098956564
+      ],
+      [
+        732564.2919175103,
+        4117504.2409551293
+      ],
+      [
+        732516.6439076784,
+        4117455.4485643143
+      ],
+      [
+        732470.1233376238,
+        4117407.7447411716
+      ],
+      [
+        732424.7528166235,
+        4117361.141503668
+      ],
+      [
+        732380.5549539546,
+        4117315.6508697663
+      ],
+      [
+        732337.5523588947,
+        4117271.284857433
+      ],
+      [
+        732295.7676407204,
+        4117228.055484631
+      ],
+      [
+        732255.223408709,
+        4117185.974769326
+      ],
+      [
+        732215.9422721377,
+        4117145.054729482
+      ],
+      [
+        732177.9457658468,
+        4117105.3066504127
+      ],
+      [
+        732141.2307126202,
+        4117066.724966409
+      ],
+      [
+        732105.7692231889,
+        4117029.2872607578
+      ],
+      [
+        732071.5323338446,
+        4116992.970384079
+      ],
+      [
+        732038.4910808802,
+        4116957.7511870037
+      ],
+      [
+        732006.6165005884,
+        4116923.6065201573
+      ],
+      [
+        731975.8796292621,
+        4116890.5132341683
+      ],
+      [
+        731946.2515031934,
+        4116858.4481796618
+      ],
+      [
+        731917.7031586753,
+        4116827.388207266
+      ],
+      [
+        731890.2056320005,
+        4116797.310167607
+      ],
+      [
+        731863.7299594614,
+        4116768.1909113135
+      ],
+      [
+        731838.2471773507,
+        4116740.00728901
+      ],
+      [
+        731813.7283219609,
+        4116712.7361513246
+      ],
+      [
+        731790.144429585,
+        4116686.354348884
+      ],
+      [
+        731767.4665365152,
+        4116660.8387323157
+      ],
+      [
+        731745.6656790444,
+        4116636.1661522463
+      ],
+      [
+        731724.7128934652,
+        4116612.313459303
+      ],
+      [
+        731704.5792160702,
+        4116589.257504112
+      ],
+      [
+        731685.235683152,
+        4116566.9751373013
+      ],
+      [
+        731666.6533310033,
+        4116545.4432094963
+      ],
+      [
+        731648.8031959166,
+        4116524.6385713257
+      ],
+      [
+        731631.6563141849,
+        4116504.538073416
+      ],
+      [
+        731615.1837221002,
+        4116485.1185663925
+      ],
+      [
+        731599.3564559557,
+        4116466.3569008843
+      ],
+      [
+        731584.1455520438,
+        4116448.2299275175
+      ],
+      [
+        731569.5220466572,
+        4116430.714496919
+      ],
+      [
+        731555.4569760883,
+        4116413.7874597153
+      ],
+      [
+        731541.9213766302,
+        4116397.425666535
+      ],
+      [
+        731528.886284575,
+        4116381.605968002
+      ],
+      [
+        731516.3227362157,
+        4116366.305214747
+      ],
+      [
+        731504.2017678447,
+        4116351.5002573933
+      ],
+      [
+        731492.4944157548,
+        4116337.1679465706
+      ],
+      [
+        731481.1717162388,
+        4116323.285132906
+      ],
+      [
+        731470.204705589,
+        4116309.8286670237
+      ],
+      [
+        731459.564420098,
+        4116296.7753995527
+      ],
+      [
+        731449.2218960586,
+        4116284.102181119
+      ],
+      [
+        731439.1481697636,
+        4116271.785862351
+      ],
+      [
+        731429.3142775053,
+        4116259.803293874
+      ],
+      [
+        731419.6912555764,
+        4116248.131326316
+      ],
+      [
+        731410.25014027,
+        4116236.746810303
+      ],
+      [
+        731400.961967878,
+        4116225.626596463
+      ],
+      [
+        731391.7977746935,
+        4116214.7475354224
+      ],
+      [
+        731382.728597009,
+        4116204.0864778077
+      ],
+      [
+        731373.7254711171,
+        4116193.6202742467
+      ],
+      [
+        731364.7594333102,
+        4116183.325775366
+      ],
+      [
+        731355.8015198816,
+        4116173.179831793
+      ],
+      [
+        731346.8227671233,
+        4116163.159294153
+      ],
+      [
+        731337.7942113283,
+        4116153.241013075
+      ],
+      [
+        731328.6868887891,
+        4116143.401839185
+      ],
+      [
+        731319.4718357982,
+        4116133.6186231095
+      ],
+      [
+        731310.1200886485,
+        4116123.868215476
+      ],
+      [
+        731300.6026836325,
+        4116114.1274669124
+      ],
+      [
+        731290.8906570429,
+        4116104.3732280442
+      ],
+      [
+        731280.9550451721,
+        4116094.5823494988
+      ],
+      [
+        731270.7668843128,
+        4116084.731681903
+      ],
+      [
+        731260.297210758,
+        4116074.7980758846
+      ],
+      [
+        731249.5170607999,
+        4116064.758382068
+      ],
+      [
+        731238.3974707313,
+        4116054.589451084
+      ],
+      [
+        731226.9094768447,
+        4116044.268133555
+      ],
+      [
+        731215.0241154332,
+        4116033.771280113
+      ],
+      [
+        731202.7124227888,
+        4116023.0757413814
+      ],
+      [
+        731189.9454352045,
+        4116012.1583679877
+      ],
+      [
+        731176.6941889728,
+        4116000.99601056
+      ],
+      [
+        731162.9297203866,
+        4115989.565519724
+      ],
+      [
+        731148.623065738,
+        4115977.843746108
+      ],
+      [
+        731133.7452613201,
+        4115965.8075403376
+      ],
+      [
+        731118.2673434253,
+        4115953.433753039
+      ],
+      [
+        731102.158396539,
+        4115940.7031638646
+      ],
+      [
+        731085.379697917,
+        4115927.6122685485
+      ],
+      [
+        731067.8905730073,
+        4115914.1614918513
+      ],
+      [
+        731049.6503472585,
+        4115900.351258532
+      ],
+      [
+        731030.6183461191,
+        4115886.1819933513
+      ],
+      [
+        731010.7538950371,
+        4115871.6541210664
+      ],
+      [
+        730990.0163194612,
+        4115856.7680664384
+      ],
+      [
+        730968.3649448393,
+        4115841.5242542243
+      ],
+      [
+        730945.7590966205,
+        4115825.923109188
+      ],
+      [
+        730922.1581002523,
+        4115809.9650560846
+      ],
+      [
+        730897.5212811835,
+        4115793.6505196746
+      ],
+      [
+        730871.8079648622,
+        4115776.9799247175
+      ],
+      [
+        730844.9774767372,
+        4115759.9536959734
+      ],
+      [
+        730816.9891422566,
+        4115742.5722582014
+      ],
+      [
+        730787.8022868687,
+        4115724.8360361597
+      ],
+      [
+        730757.3762360218,
+        4115706.745454609
+      ],
+      [
+        730725.6703151644,
+        4115688.3009383082
+      ],
+      [
+        730692.6438497447,
+        4115669.502912017
+      ],
+      [
+        730658.2561652113,
+        4115650.351800495
+      ],
+      [
+        730622.4665870122,
+        4115630.8480284987
+      ],
+      [
+        730585.2344405961,
+        4115610.9920207914
+      ],
+      [
+        730546.5190514112,
+        4115590.784202131
+      ],
+      [
+        730506.2797449058,
+        4115570.224997276
+      ],
+      [
+        730464.4758465283,
+        4115549.314830987
+      ],
+      [
+        730421.0666817272,
+        4115528.054128024
+      ],
+      [
+        730376.0115759507,
+        4115506.4433131437
+      ],
+      [
+        730329.2698546469,
+        4115484.4828111064
+      ],
+      [
+        730280.8008432647,
+        4115462.1730466736
+      ],
+      [
+        730230.5638672519,
+        4115439.5144446027
+      ],
+      [
+        730178.5182520573,
+        4115416.507429653
+      ],
+      [
+        730124.6233231289,
+        4115393.152426584
+      ],
+      [
+        730068.8384059155,
+        4115369.449860157
+      ],
+      [
+        730011.1228258649,
+        4115345.400155129
+      ],
+      [
+        729951.435908426,
+        4115321.0037362603
+      ],
+      [
+        729889.7369790466,
+        4115296.2610283094
+      ],
+      [
+        729825.9853631754,
+        4115271.1724560373
+      ],
+      [
+        729760.1403862608,
+        4115245.738444202
+      ],
+      [
+        729692.161373751,
+        4115219.9594175643
+      ],
+      [
+        729622.0076510942,
+        4115193.8358008815
+      ],
+      [
+        729549.6385437392,
+        4115167.368018915
+      ],
+      [
+        729475.0133771339,
+        4115140.556496422
+      ],
+      [
+        729398.0914767268,
+        4115113.4016581643
+      ],
+      [
+        729318.8321679664,
+        4115085.9039288997
+      ],
+      [
+        729237.1947763009,
+        4115058.0637333877
+      ],
+      [
+        729153.1386271787,
+        4115029.8814963885
+      ],
+      [
+        729066.6230460482,
+        4115001.357642661
+      ],
+      [
+        728977.6073583578,
+        4114972.4925969634
+      ],
+      [
+        728886.0508895555,
+        4114943.286784057
+      ],
+      [
+        728791.91296509,
+        4114913.7406287002
+      ],
+      [
+        728695.1529104097,
+        4114883.8545556525
+      ],
+      [
+        728595.7300509627,
+        4114853.628989673
+      ],
+      [
+        728493.6037121974,
+        4114823.064355522
+      ],
+      [
+        728388.7332195622,
+        4114792.161077957
+      ],
+      [
+        728281.0778985056,
+        4114760.9195817406
+      ],
+      [
+        728170.5970744756,
+        4114729.3402916286
+      ],
+      [
+        728057.2500729209,
+        4114697.423632381
+      ],
+      [
+        727940.9962192897,
+        4114665.17002876
+      ],
+      [
+        727821.7948390304,
+        4114632.579905522
+      ],
+      [
+        727699.6052575912,
+        4114599.6536874273
+      ],
+      [
+        727574.3868004205,
+        4114566.391799235
+      ],
+      [
+        727446.0987929669,
+        4114532.7946657054
+      ],
+      [
+        727314.7005606786,
+        4114498.8627115977
+      ],
+      [
+        727180.1514290038,
+        4114464.59636167
+      ],
+      [
+        727042.4107233911,
+        4114429.9960406837
+      ],
+      [
+        726901.4377692887,
+        4114395.062173396
+      ],
+      [
+        726757.191892145,
+        4114359.7951845685
+      ],
+      [
+        726609.6344700564,
+        4114324.195327949
+      ],
+      [
+        726458.7740920212,
+        4114288.2589240526
+      ],
+      [
+        726304.6665579411,
+        4114251.978360166
+      ],
+      [
+        726147.3697203648,
+        4114215.3458525618
+      ],
+      [
+        725986.9414318412,
+        4114178.353617512
+      ],
+      [
+        725823.4395449202,
+        4114140.9938712926
+      ],
+      [
+        725656.9219121503,
+        4114103.258830177
+      ],
+      [
+        725487.4463860808,
+        4114065.1407104377
+      ],
+      [
+        725315.0708192607,
+        4114026.6317283497
+      ],
+      [
+        725139.8530642389,
+        4113987.7241001856
+      ],
+      [
+        724961.8509735651,
+        4113948.41004222
+      ],
+      [
+        724781.1223997879,
+        4113908.6817707256
+      ],
+      [
+        724597.7251954563,
+        4113868.531501976
+      ],
+      [
+        724411.7172131196,
+        4113827.9514522455
+      ],
+      [
+        724223.1563053272,
+        4113786.9338378077
+      ],
+      [
+        724032.1003246277,
+        4113745.470874937
+      ],
+      [
+        723838.6071235704,
+        4113703.5547799054
+      ],
+      [
+        723642.7345547043,
+        4113661.1777689876
+      ],
+      [
+        723444.5404705786,
+        4113618.3320584567
+      ],
+      [
+        723244.0827237426,
+        4113575.009864588
+      ],
+      [
+        723041.4191667449,
+        4113531.203403654
+      ],
+      [
+        722836.6076521348,
+        4113486.9048919273
+      ],
+      [
+        722629.7060324617,
+        4113442.1065456835
+      ],
+      [
+        722420.7721602742,
+        4113396.800581195
+      ],
+      [
+        722209.8638881219,
+        4113350.9792147367
+      ],
+      [
+        721997.0390685536,
+        4113304.6346625807
+      ],
+      [
+        721782.3555541182,
+        4113257.7591410014
+      ],
+      [
+        721565.8711973651,
+        4113210.3448662725
+      ],
+      [
+        721347.6438508434,
+        4113162.3840546687
+      ],
+      [
+        721127.731367102,
+        4113113.8689224604
+      ],
+      [
+        720906.1915986903,
+        4113064.7916859253
+      ],
+      [
+        720683.0823981571,
+        4113015.1445613354
+      ],
+      [
+        720458.4616180516,
+        4112964.9197649644
+      ],
+      [
+        720232.387110923,
+        4112914.1095130853
+      ],
+      [
+        720004.9167293202,
+        4112862.7060219725
+      ],
+      [
+        719776.1083257924,
+        4112810.7015078994
+      ],
+      [
+        719546.0197528885,
+        4112758.088187139
+      ],
+      [
+        719314.7088631581,
+        4112704.8582759677
+      ],
+      [
+        719082.23350915,
+        4112651.0039906567
+      ],
+      [
+        718848.651543413,
+        4112596.51754748
+      ],
+      [
+        718614.0208184966,
+        4112541.3911627107
+      ],
+      [
+        718378.3991869498,
+        4112485.6170526245
+      ],
+      [
+        718141.8445013217,
+        4112429.187433494
+      ],
+      [
+        717904.4146141611,
+        4112372.0945215914
+      ],
+      [
+        717666.1673780176,
+        4112314.330533192
+      ],
+      [
+        717427.1606454399,
+        4112255.8876845697
+      ],
+      [
+        717187.4522689772,
+        4112196.758191997
+      ],
+      [
+        716947.1001011785,
+        4112136.934271749
+      ],
+      [
+        716706.1619945935,
+        4112076.4081400987
+      ],
+      [
+        716464.6958017704,
+        4112015.172013319
+      ],
+      [
+        716222.7593752588,
+        4111953.218107685
+      ],
+      [
+        715980.4105676077,
+        4111890.5386394686
+      ],
+      [
+        715737.7072313663,
+        4111827.1258249455
+      ],
+      [
+        715494.7072190836,
+        4111762.9718803884
+      ],
+      [
+        715251.4683833086,
+        4111698.0690220706
+      ],
+      [
+        715008.0485765906,
+        4111632.409466266
+      ],
+      [
+        714764.5056514785,
+        4111565.9854292492
+      ],
+      [
+        714520.8974605215,
+        4111498.789127292
+      ],
+      [
+        714277.2818562686,
+        4111430.8127766703
+      ],
+      [
+        714033.7166912692,
+        4111362.0485936557
+      ],
+      [
+        713790.259818072,
+        4111292.488794523
+      ],
+      [
+        713546.9690892263,
+        4111222.125595547
+      ],
+      [
+        713303.9023572812,
+        4111150.951212999
+      ],
+      [
+        713061.1174747855,
+        4111078.957863153
+      ],
+      [
+        712818.6722942889,
+        4111006.1377622844
+      ],
+      [
+        712576.62466834,
+        4110932.483126666
+      ],
+      [
+        712335.0324494878,
+        4110857.9861725704
+      ]
+    ],
+    "hard_sample_parameter_t": [
+      0.0,
+      0.002506265664160401,
+      0.005012531328320802,
+      0.007518796992481203,
+      0.010025062656641603,
+      0.012531328320802004,
+      0.015037593984962405,
+      0.017543859649122806,
+      0.020050125313283207,
+      0.022556390977443608,
+      0.02506265664160401,
+      0.02756892230576441,
+      0.03007518796992481,
+      0.03258145363408521,
+      0.03508771929824561,
+      0.03759398496240601,
+      0.040100250626566414,
+      0.042606516290726815,
+      0.045112781954887216,
+      0.047619047619047616,
+      0.05012531328320802,
+      0.05263157894736842,
+      0.05513784461152882,
+      0.05764411027568922,
+      0.06015037593984962,
+      0.06265664160401002,
+      0.06516290726817042,
+      0.06766917293233082,
+      0.07017543859649122,
+      0.07268170426065163,
+      0.07518796992481203,
+      0.07769423558897243,
+      0.08020050125313283,
+      0.08270676691729323,
+      0.08521303258145363,
+      0.08771929824561403,
+      0.09022556390977443,
+      0.09273182957393483,
+      0.09523809523809523,
+      0.09774436090225563,
+      0.10025062656641603,
+      0.10275689223057644,
+      0.10526315789473684,
+      0.10776942355889724,
+      0.11027568922305764,
+      0.11278195488721804,
+      0.11528822055137844,
+      0.11779448621553884,
+      0.12030075187969924,
+      0.12280701754385964,
+      0.12531328320802004,
+      0.12781954887218044,
+      0.13032581453634084,
+      0.13283208020050125,
+      0.13533834586466165,
+      0.13784461152882205,
+      0.14035087719298245,
+      0.14285714285714285,
+      0.14536340852130325,
+      0.14786967418546365,
+      0.15037593984962405,
+      0.15288220551378445,
+      0.15538847117794485,
+      0.15789473684210525,
+      0.16040100250626566,
+      0.16290726817042606,
+      0.16541353383458646,
+      0.16791979949874686,
+      0.17042606516290726,
+      0.17293233082706766,
+      0.17543859649122806,
+      0.17794486215538846,
+      0.18045112781954886,
+      0.18295739348370926,
+      0.18546365914786966,
+      0.18796992481203006,
+      0.19047619047619047,
+      0.19298245614035087,
+      0.19548872180451127,
+      0.19799498746867167,
+      0.20050125313283207,
+      0.20300751879699247,
+      0.20551378446115287,
+      0.20802005012531327,
+      0.21052631578947367,
+      0.21303258145363407,
+      0.21553884711779447,
+      0.21804511278195488,
+      0.22055137844611528,
+      0.22305764411027568,
+      0.22556390977443608,
+      0.22807017543859648,
+      0.23057644110275688,
+      0.23308270676691728,
+      0.23558897243107768,
+      0.23809523809523808,
+      0.24060150375939848,
+      0.24310776942355888,
+      0.24561403508771928,
+      0.24812030075187969,
+      0.2506265664160401,
+      0.2531328320802005,
+      0.2556390977443609,
+      0.2581453634085213,
+      0.2606516290726817,
+      0.2631578947368421,
+      0.2656641604010025,
+      0.2681704260651629,
+      0.2706766917293233,
+      0.2731829573934837,
+      0.2756892230576441,
+      0.2781954887218045,
+      0.2807017543859649,
+      0.2832080200501253,
+      0.2857142857142857,
+      0.2882205513784461,
+      0.2907268170426065,
+      0.2932330827067669,
+      0.2957393483709273,
+      0.2982456140350877,
+      0.3007518796992481,
+      0.3032581453634085,
+      0.3057644110275689,
+      0.3082706766917293,
+      0.3107769423558897,
+      0.3132832080200501,
+      0.3157894736842105,
+      0.3182957393483709,
+      0.3208020050125313,
+      0.3233082706766917,
+      0.3258145363408521,
+      0.3283208020050125,
+      0.3308270676691729,
+      0.3333333333333333,
+      0.3358395989974937,
+      0.3383458646616541,
+      0.3408521303258145,
+      0.3433583959899749,
+      0.3458646616541353,
+      0.3483709273182957,
+      0.3508771929824561,
+      0.3533834586466165,
+      0.3558897243107769,
+      0.3583959899749373,
+      0.3609022556390977,
+      0.3634085213032581,
+      0.3659147869674185,
+      0.3684210526315789,
+      0.37092731829573933,
+      0.37343358395989973,
+      0.37593984962406013,
+      0.37844611528822053,
+      0.38095238095238093,
+      0.38345864661654133,
+      0.38596491228070173,
+      0.38847117794486213,
+      0.39097744360902253,
+      0.39348370927318294,
+      0.39598997493734334,
+      0.39849624060150374,
+      0.40100250626566414,
+      0.40350877192982454,
+      0.40601503759398494,
+      0.40852130325814534,
+      0.41102756892230574,
+      0.41353383458646614,
+      0.41604010025062654,
+      0.41854636591478694,
+      0.42105263157894735,
+      0.42355889724310775,
+      0.42606516290726815,
+      0.42857142857142855,
+      0.43107769423558895,
+      0.43358395989974935,
+      0.43609022556390975,
+      0.43859649122807015,
+      0.44110275689223055,
+      0.44360902255639095,
+      0.44611528822055135,
+      0.44862155388471175,
+      0.45112781954887216,
+      0.45363408521303256,
+      0.45614035087719296,
+      0.45864661654135336,
+      0.46115288220551376,
+      0.46365914786967416,
+      0.46616541353383456,
+      0.46867167919799496,
+      0.47117794486215536,
+      0.47368421052631576,
+      0.47619047619047616,
+      0.47869674185463656,
+      0.48120300751879697,
+      0.48370927318295737,
+      0.48621553884711777,
+      0.48872180451127817,
+      0.49122807017543857,
+      0.49373433583959897,
+      0.49624060150375937,
+      0.49874686716791977,
+      0.5012531328320802,
+      0.5037593984962405,
+      0.506265664160401,
+      0.5087719298245614,
+      0.5112781954887218,
+      0.5137844611528821,
+      0.5162907268170426,
+      0.518796992481203,
+      0.5213032581453634,
+      0.5238095238095237,
+      0.5263157894736842,
+      0.5288220551378446,
+      0.531328320802005,
+      0.5338345864661653,
+      0.5363408521303258,
+      0.5388471177944862,
+      0.5413533834586466,
+      0.5438596491228069,
+      0.5463659147869674,
+      0.5488721804511278,
+      0.5513784461152882,
+      0.5538847117794485,
+      0.556390977443609,
+      0.5588972431077694,
+      0.5614035087719298,
+      0.5639097744360901,
+      0.5664160401002506,
+      0.568922305764411,
+      0.5714285714285714,
+      0.5739348370927317,
+      0.5764411027568922,
+      0.5789473684210527,
+      0.581453634085213,
+      0.5839598997493733,
+      0.5864661654135338,
+      0.5889724310776943,
+      0.5914786967418546,
+      0.593984962406015,
+      0.5964912280701754,
+      0.5989974937343359,
+      0.6015037593984962,
+      0.6040100250626566,
+      0.606516290726817,
+      0.6090225563909775,
+      0.6115288220551378,
+      0.6140350877192982,
+      0.6165413533834586,
+      0.6190476190476191,
+      0.6215538847117794,
+      0.6240601503759398,
+      0.6265664160401002,
+      0.6290726817042607,
+      0.631578947368421,
+      0.6340852130325814,
+      0.6365914786967418,
+      0.6390977443609023,
+      0.6416040100250626,
+      0.644110275689223,
+      0.6466165413533834,
+      0.6491228070175439,
+      0.6516290726817042,
+      0.6541353383458646,
+      0.656641604010025,
+      0.6591478696741855,
+      0.6616541353383458,
+      0.6641604010025062,
+      0.6666666666666666,
+      0.6691729323308271,
+      0.6716791979949874,
+      0.6741854636591478,
+      0.6766917293233082,
+      0.6791979949874687,
+      0.681704260651629,
+      0.6842105263157894,
+      0.6867167919799498,
+      0.6892230576441103,
+      0.6917293233082706,
+      0.694235588972431,
+      0.6967418546365914,
+      0.6992481203007519,
+      0.7017543859649122,
+      0.7042606516290726,
+      0.706766917293233,
+      0.7092731829573935,
+      0.7117794486215538,
+      0.7142857142857142,
+      0.7167919799498746,
+      0.7192982456140351,
+      0.7218045112781954,
+      0.7243107769423558,
+      0.7268170426065163,
+      0.7293233082706767,
+      0.731829573934837,
+      0.7343358395989974,
+      0.7368421052631579,
+      0.7393483709273183,
+      0.7418546365914787,
+      0.744360902255639,
+      0.7468671679197995,
+      0.7493734335839599,
+      0.7518796992481203,
+      0.7543859649122806,
+      0.7568922305764411,
+      0.7593984962406015,
+      0.7619047619047619,
+      0.7644110275689222,
+      0.7669172932330827,
+      0.7694235588972431,
+      0.7719298245614035,
+      0.7744360902255638,
+      0.7769423558897243,
+      0.7794486215538847,
+      0.7819548872180451,
+      0.7844611528822054,
+      0.7869674185463659,
+      0.7894736842105263,
+      0.7919799498746867,
+      0.794486215538847,
+      0.7969924812030075,
+      0.7994987468671679,
+      0.8020050125313283,
+      0.8045112781954886,
+      0.8070175438596491,
+      0.8095238095238095,
+      0.8120300751879699,
+      0.8145363408521302,
+      0.8170426065162907,
+      0.8195488721804511,
+      0.8220551378446115,
+      0.8245614035087718,
+      0.8270676691729323,
+      0.8295739348370927,
+      0.8320802005012531,
+      0.8345864661654134,
+      0.8370927318295739,
+      0.8395989974937343,
+      0.8421052631578947,
+      0.844611528822055,
+      0.8471177944862155,
+      0.849624060150376,
+      0.8521303258145363,
+      0.8546365914786966,
+      0.8571428571428571,
+      0.8596491228070176,
+      0.8621553884711779,
+      0.8646616541353382,
+      0.8671679197994987,
+      0.8696741854636592,
+      0.8721804511278195,
+      0.8746867167919798,
+      0.8771929824561403,
+      0.8796992481203008,
+      0.8822055137844611,
+      0.8847117794486214,
+      0.8872180451127819,
+      0.8897243107769424,
+      0.8922305764411027,
+      0.894736842105263,
+      0.8972431077694235,
+      0.899749373433584,
+      0.9022556390977443,
+      0.9047619047619047,
+      0.9072681704260651,
+      0.9097744360902256,
+      0.9122807017543859,
+      0.9147869674185463,
+      0.9172932330827067,
+      0.9197994987468672,
+      0.9223057644110275,
+      0.9248120300751879,
+      0.9273182957393483,
+      0.9298245614035088,
+      0.9323308270676691,
+      0.9348370927318295,
+      0.9373433583959899,
+      0.9398496240601504,
+      0.9423558897243107,
+      0.9448621553884711,
+      0.9473684210526315,
+      0.949874686716792,
+      0.9523809523809523,
+      0.9548872180451127,
+      0.9573934837092731,
+      0.9598997493734336,
+      0.9624060150375939,
+      0.9649122807017543,
+      0.9674185463659147,
+      0.9699248120300752,
+      0.9724310776942355,
+      0.9749373433583959,
+      0.9774436090225563,
+      0.9799498746867168,
+      0.9824561403508771,
+      0.9849624060150375,
+      0.9874686716791979,
+      0.9899749373433584,
+      0.9924812030075187,
+      0.9949874686716791,
+      0.9974937343358395,
+      1.0
+    ],
+    "description": "Exact endpoints and ordered graph nodes; adopted spline sampled on optimizer active integration/collocation grid. Interior B-spline control points do not generally lie on the curve."
+  },
+  "sampling_protocol": {
+    "configured_n_samples": 200,
+    "configured_n_constraint_samples": 400,
+    "actual_objective_and_constraint_samples": 400,
+    "note": "HardProblem sets its active spline grid to n_constraint_samples; both objective integration and collocation use it."
+  },
+  "route_feasibility": {
+    "easy": {
+      "feasible": true,
+      "criteria": {
+        "solver_collocation_nominal": true,
+        "dense_depth": true,
+        "dense_slope": true,
+        "exact_spline_curvature": true,
+        "inside_valid_domain": true,
+        "finite_and_physical": true
+      },
+      "reasons": [],
+      "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+    },
+    "hard": {
+      "feasible": true,
+      "criteria": {
+        "solver_collocation_nominal": true,
+        "dense_depth": true,
+        "dense_slope": true,
+        "exact_spline_curvature": true,
+        "inside_valid_domain": true,
+        "finite_and_physical": true
+      },
+      "reasons": [],
+      "definition": "feasible = collocation constraints at nominal limits AND dense depth AND dense slope AND exact spline curvature AND inside the valid data domain AND finite, strictly positive interpolated depth"
+    }
+  },
+  "kappa_exact_hard": {
+    "kappa_max": 0.0007204100483536027,
+    "kappa_min_radius_m": 1388.098350773093,
+    "kappa_max_location_frac": 0.0,
+    "kappa_signed_at_max": -0.0007204100483536027,
+    "optimiser_kappa_max": 0.0007204100483557387,
+    "agreement_vs_optimiser": 2.1359867000136923e-15,
+    "n_samples": 2001,
+    "speed_min_m_per_unit_t": 5347.867615144352,
+    "endpoint_speed_m_per_unit_t": [
+      9940.52488986886,
+      100829.93922186733
+    ],
+    "note": "sample-independent recomputation on a rebuilt BSpline; the parameter speed is not uniform, so the maximum is located by sampling t uniformly, not by arc length"
+  },
+  "endpoints": {
+    "A_lonlat": [
+      11.855,
+      37.36
+    ],
+    "B_lonlat": [
+      11.39,
+      37.12
+    ],
+    "A_xy_m": [
+      752851.8794015187,
+      4138634.151678177
+    ],
+    "B_xy_m": [
+      712335.0324494878,
+      4110857.9861725704
+    ],
+    "A_cell": [
+      92,
+      100
+    ],
+    "B_cell": [
+      30,
+      10
+    ],
+    "crs": 32632
+  },
+  "interpolator_check": {
+    "method": "cubic",
+    "spline_order": 3,
+    "n_probe": 20000,
+    "z": {
+      "interior_max_overshoot": 9.648961389107882,
+      "interior_p99_overshoot": 0.33215670846003253,
+      "interior_mean_overshoot": 0.0170343623186483,
+      "interior_n_probe": 19091,
+      "boundary_max_overshoot": 65.3324046588275,
+      "boundary_p99_overshoot": 5.775259311229113,
+      "boundary_n_probe": 565,
+      "max_abs_overshoot": 9.648961389107882,
+      "p99_abs_overshoot": 0.33215670846003253,
+      "relative_max_overshoot": 0.012316854364838823,
+      "n_probe": 19656
+    },
+    "d": {
+      "interior_max_overshoot": 9.648961389107882,
+      "interior_p99_overshoot": 0.33215670846003253,
+      "interior_mean_overshoot": 0.0170343623186483,
+      "interior_n_probe": 19091,
+      "boundary_max_overshoot": 65.3324046588275,
+      "boundary_p99_overshoot": 5.775259311229113,
+      "boundary_n_probe": 565,
+      "max_abs_overshoot": 9.648961389107882,
+      "p99_abs_overshoot": 0.33215670846003253,
+      "relative_max_overshoot": 0.012316854364838823,
+      "n_probe": 19656
+    },
+    "s": {
+      "interior_max_overshoot": 0.022080110482628812,
+      "interior_p99_overshoot": 0.001628067675747032,
+      "interior_mean_overshoot": 5.12908980998013e-05,
+      "interior_n_probe": 18349,
+      "boundary_max_overshoot": 0.0493634794852892,
+      "boundary_p99_overshoot": 0.00985758947017607,
+      "boundary_n_probe": 782,
+      "max_abs_overshoot": 0.022080110482628812,
+      "p99_abs_overshoot": 0.001628067675747032,
+      "relative_max_overshoot": 0.08632199969986083,
+      "n_probe": 19131
+    },
+    "R": {
+      "interior_max_overshoot": 0.022666430892001155,
+      "interior_p99_overshoot": 0.0019840763409293576,
+      "interior_mean_overshoot": 6.855192612750059e-05,
+      "interior_n_probe": 17610,
+      "boundary_max_overshoot": 0.047791363694414835,
+      "boundary_p99_overshoot": 0.019250262081568405,
+      "boundary_n_probe": 770,
+      "max_abs_overshoot": 0.022666430892001155,
+      "p99_abs_overshoot": 0.0019840763409293576,
+      "relative_max_overshoot": 0.03397035716422913,
+      "n_probe": 18380
+    },
+    "depth_leakage": {
+      "min_interp_depth_m": 14.648698515611715,
+      "n_probe_implying_land": 0,
+      "n_probe_on_masked_cell": 624,
+      "linear_min_interp_depth_m": 26.799613466227953,
+      "linear_n_probe_implying_land": 0,
+      "policy": "an interpolated depth <= 0 means the interpolant implied land; it is treated as infeasible (the constraint d >= d_min with d_min > 0 rejects it), never clipped to a small positive value",
+      "note": "depth is interpolated from ocean samples only; the two columns show the cubic and the linear depth interpolants on identical probes."
+    }
+  },
+  "data_meta": {
+    "source_nc": "gebco_2026_n37.45_s37.0_w11.35_e11.9.nc",
+    "tid_nc": "gebco_2026_tid_n37.45_s37.0_w11.35_e11.9.nc",
+    "pipeline_version": "2",
+    "config_fingerprint": "fa52941199237291",
+    "crs": "EPSG:32632 (WGS 84 / UTM zone 32N)",
+    "spacing_m": 450.0,
+    "shape": [
+      115,
+      113
+    ],
+    "bbox_wgs84": {
+      "north": 37.45,
+      "south": 37.0,
+      "west": 11.35,
+      "east": 11.9
+    },
+    "source_footprint_wgs84_cell_extent": {
+      "lon_min": 11.349999999999993,
+      "lon_max": 11.900000000000007,
+      "lat_min": 36.99999999999999,
+      "lat_max": 37.449999999999996,
+      "centre_lon": [
+        11.352083333333326,
+        11.897916666666674
+      ],
+      "centre_lat": [
+        37.002083333333324,
+        37.447916666666664
+      ]
+    },
+    "x_range_m": [
+      707870.4251915074,
+      758270.4251915074
+    ],
+    "y_range_m": [
+      4097453.994197236,
+      4148753.994197236
+    ],
+    "resampling_elevation": "bilinear",
+    "resampling_tid": "nearest",
+    "resampling_policy": "strict bilinear: a target point is valid only if every weighted source corner is a valid ocean cell; no extrapolation, no blending of land/NoData",
+    "nodata_policy": "z <= -100000.0 or non-finite -> missing; land (z >= 0) masked; both applied to the SOURCE raster before resampling",
+    "edge_policy": "inside the footprint but outside the outermost source cell centre, the edge cell is replicated (no extrapolation)",
+    "n_cells": 12995,
+    "n_valid": 12020,
+    "n_invalid": 975,
+    "n_outside_footprint": 952,
+    "n_stencil_touches_land_nodata": 23,
+    "n_source_cells": 14256,
+    "n_source_land_cells": 16,
+    "n_source_nodata_cells": 0,
+    "land_fraction": 0.07502885725278953,
+    "masked_fraction": 0.07502885725278953,
+    "land_nodata_only_fraction": 0.0017699115044247787,
+    "land_only_cells": 23,
+    "outside_fraction": 0.07325894574836475,
+    "invalid_fraction": 0.07502885725278953,
+    "noData_fraction_source": 0.0,
+    "endpoints_wgs84": {
+      "lon": [
+        11.855,
+        11.39
+      ],
+      "lat": [
+        37.36,
+        37.12
+      ]
+    },
+    "endpoints_xy_m": {
+      "A": [
+        752851.8794015187,
+        4138634.151678177
+      ],
+      "B": [
+        712335.0324494878,
+        4110857.9861725704
+      ]
+    },
+    "AB_geodesic_m": 49110.45300776633,
+    "AB_grid_m": 49123.622190644186,
+    "AB_difference_m": 13.169182877856656,
+    "AB_difference_pct": 0.026815437592836052
+  },
+  "feature_settings": {
+    "slope_method": "central",
+    "curvature_method": "laplacian",
+    "roughness_window": 3,
+    "roughness_field": "slope",
+    "smooth_sigma_cells": 0.0,
+    "normalization": "minmax",
+    "weights": {
+      "slope": 0.5,
+      "roughness": 0.3,
+      "curvature": 0.2
+    },
+    "slope_squared": true,
+    "spacing_m": [
+      450.0,
+      450.0
+    ]
+  },
+  "norm_ranges": {
+    "slope_m_per_m": [
+      0.0,
+      0.2557877546790011
+    ],
+    "roughness": [
+      0.0,
+      0.09164915030929506
+    ],
+    "curvature_1_per_m": [
+      1.2463465022577891e-09,
+      0.0008042556431934245
+    ]
+  },
+  "limits": {
+    "d_min": 50.0,
+    "d_max": 600.0,
+    "s_max": 0.09628904819753861,
+    "s_max_deg": 5.5,
+    "kappa_max": 0.00074074
+  },
+  "beta": 1.0,
+  "alpha": 1.0
+}
